@@ -1,0 +1,24 @@
+.body_login{    
+    background-image: url("../image/Background.png");
+    background-repeat: no-repeat !important;
+    background-size: cover;  
+}
+
+body,html {
+    height: 100%;
+}
+
+.login-btn{    
+    width: 170px;
+    border-radius: 0px;
+}
+
+.card-login-footer{
+    background: black;
+    margin: 0px !important;
+    border-radius: 0px !important;
+}
+
+.login-footer-logo > img {
+    width: 170px;
+}

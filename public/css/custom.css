@@ -1,0 +1,31 @@
+.border-radius-0{
+    border-radius: 0px !important;
+}
+
+.txt-white{
+    color: #fff;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.margin-0-auto{
+    margin: 0 auto;
+}
+
+.float-right{
+    float: right;
+}
+
+.float-left{
+    float: left;
+}
+
+.padding-0{
+    padding: 0px;
+}
+
+.border-none{
+    border: 0px;
+}
