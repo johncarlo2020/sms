@@ -14,11 +14,18 @@ body,html {
 }
 
 .card-login-footer{
-    background: black;
+    background-color: black !important;
     margin: 0px !important;
     border-radius: 0px !important;
 }
 
 .login-footer-logo > img {
     width: 170px;
+}
+
+
+/* register */
+.reg-title,
+.login-title{
+    margin-bottom: 20px;
 }

@@ -1,9 +1,25 @@
+a{
+    text-decoration: none !important;
+}
+
 .border-radius-0{
     border-radius: 0px !important;
 }
 
+.bgViolet{
+    background-color: #303183 !important;
+}
+
+.bgWhite{
+    background-color: #fff !important;
+}
+
 .txt-white{
     color: #fff;
+}
+
+.txt-black{
+    color: black !important;
 }
 
 .text-left{
@@ -23,9 +39,102 @@
 }
 
 .padding-0{
-    padding: 0px;
+    padding: 0px !important;
 }
 
 .border-none{
     border: 0px;
 }
+
+
+/* side menu */
+.sidebar-dark .nav-item .nav-link, .sidebar-dark .nav-item .nav-link{
+    padding: 9px !important;
+}
+
+.bg-side-menu{
+    background-color: #212529;
+}
+
+.nav-side-profile{
+    background-color: red;
+    height: 70px;
+    width: 70px;
+    border-radius: 20%;
+    margin: 0 auto;
+}
+/* end side menu */
+
+/* survey */
+.survey-template-container > div:nth-child(2){
+    min-height: 200px;
+    max-height: 200px;    
+}
+
+.survey-template-container > div{
+    margin-bottom: 70px;
+    min-height: 150px;
+    max-height: 150px;    
+}
+
+.survey-container-img{
+    background-color: #bcbbbb !important;
+}
+
+.survey-container-img > img{
+    display: none;
+}
+
+.survey-tpl-title{
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.survey-tpl-question-title{
+    color: gray;
+    font-size: 11px;
+}
+
+.start-survey-container{
+    /* line-height: 145px; */
+    text-align: center;
+}
+
+.start_new_survey{
+    background: #303183;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 0.35rem;
+}
+
+.start_new_survey > span {
+    line-height: 106px;
+}
+
+.start_new_survey > span > i {
+    position: relative;
+    top: 36px;
+}
+
+.title-page{
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #2a2448;
+}
+
+.title-page-modal{
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #2a2448;
+}
+
+.modal-survey-name{
+    font-size: 12px;
+    font-weight: 700;
+}
+/* end survey */

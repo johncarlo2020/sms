@@ -5,7 +5,7 @@
 <div class="container align-items-center text-center">
     <div class="row justify-content-center">
         <div class="col-md-6 col-sm-8 col-xs-8" style="margin-top: 18%;">
-            <h3 class="txt-white">{{ __('Survey Management System') }}</h3>
+            <h3 class="txt-white login-title">{{ __('Survey Management System') }}</h3>
             <div class="card border-radius-0 border-none">
                             
                 <div class="card-body">
@@ -14,7 +14,7 @@
                         <p>{{ __('Login') }}</p>
                         <div class="row mb-3 align-items-center">                            
                             <div class="col-md-12 margin-0-auto">
-                                <input id="email" type="email" placeholder="{{ __('Email') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" placeholder="{{ __('Email') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="off" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
