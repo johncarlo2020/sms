@@ -20,5 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/survey', [App\Http\Controllers\SurveyController::class, 'index'])->name('survey');
+Route::post('/survey', [App\Http\Controllers\SurveyController::class, 'create'])->name('survey');
 
