@@ -46,6 +46,14 @@ a{
     border: 0px;
 }
 
+.hide{
+    display: none;
+}
+
+.modal-lg{
+    width: 700px !important;
+}
+
 
 /* side menu */
 .sidebar-dark .nav-item .nav-link, .sidebar-dark .nav-item .nav-link{
@@ -133,8 +141,101 @@ a{
     color: #2a2448;
 }
 
+.title-new-survey{
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    color: #3f356f;
+    font-family: system-ui;
+}
+
+.survey-add-logo{
+    padding: 26px;
+    border: 1px dashed;
+    font-size: 13px;
+}
+
+.line-dashed{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    border: 1px dashed;
+}
+
 .modal-survey-name{
     font-size: 12px;
     font-weight: 700;
 }
+
+.choices-container,
+.add-question-container{
+    text-align: center;
+    margin-top: 10%;
+    max-width: 90%;
+}
+
+.choices-container > div > div{
+    background-color: #fff;    
+    border-right: 1px solid #dcdce3;
+    border-bottom: 1px solid #dcdce3;
+    padding: 16px;
+}
+
+.choices-container > div > div > a > i{
+    background: #dcdce3;
+    padding: 10px;
+    border-radius: 8px;
+    color: black;
+}
+
+.choices-container > div > div > a{
+    position: relative;
+    top: 17px;
+}
+
+.text-choice{
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #3f356f;
+    font-family: system-ui;
+    margin-top: 16px;
+}
+
+
+.btn-choice-minus{
+    color: #25224c;
+    font-size: 30px;
+    position: relative;
+    top: 23px;
+    z-index: 1;
+    left: -12px;
+}
+
 /* end survey */
+
+/* Add Question */
+.btn-add-answer{
+    color: #2e6ddf !important;
+    font-weight: 700 !important;
+    font-family: system-ui;
+    font-size: 13px !important;
+    border: 1px solid #2e6ddf !important;
+}
+
+.add-question-dropdown{
+    background-color: #fff !important;
+    border: 1px solid gray !important;
+}
+
+
+.survey-created{
+    max-width: 90%;
+}
+
+.survey-created-options{
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+/* end Add Question */
