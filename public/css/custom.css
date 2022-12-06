@@ -213,7 +213,8 @@ a{
 /* end survey */
 
 /* Add Question */
-.btn-add-answer{
+.btn-add-answer,
+.btn-add-other-answer{
     color: #2e6ddf !important;
     font-weight: 700 !important;
     font-family: system-ui;
@@ -237,5 +238,11 @@ a{
     margin-bottom: 10px;
     border-radius: 4px;
     font-weight: 600;
+}
+
+.remove-answer{
+    position: relative;
+    top: 7px;
+    cursor: pointer;
 }
 /* end Add Question */

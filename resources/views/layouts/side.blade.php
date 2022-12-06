@@ -587,10 +587,36 @@
 
         <!-- end Modal -->
         <script>
-            $(document).ready(function() {
+            $(document).ready(function() {                
                 $(document).on('click', '.btn-add-question', function(){
                     $('.add-question-container').addClass('hide');
                     $('.choices-container').removeClass('hide');                    
+                });
+
+
+                // Add input answer
+                $(document).on('click', '.btn-add-answer', function(){
+                    
+                    let answer = `
+                        <div class="form-group">
+                            <div class="col-md-12 row">
+                                <input type="text" name="survey" class="form-control form-control-user col-md-11"
+                                    id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Answer" />
+                                <div class="col-md-1">
+                                    <span class="remove-answer">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        `
+
+                    $(".answer-container").append(answer);	
+                });
+
+                // Remove Answer
+                $(document).on('click', '.remove-answer', function(){
+                    $(this).parent().parent().parent().remove();
                 });
             });
         </script>
