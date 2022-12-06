@@ -587,10 +587,15 @@
 
         <!-- end Modal -->
         <script>
-            $(document).ready(function() {                
+            $(document).ready(function() {                                            
                 $(document).on('click', '.btn-add-question', function(){
                     $('.add-question-container').addClass('hide');
                     $('.choices-container').removeClass('hide');                    
+                });
+
+                $(document).on('click', '.choices-container > .btn-choice-minus', function(){
+                    $(this).parent().addClass('hide');
+                    $('.add-question-container').removeClass('hide');
                 });
 
 

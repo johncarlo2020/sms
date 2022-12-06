@@ -51,7 +51,7 @@
                 <i class="fas fa-regular fa-minus-circle" aria-hidden="true"></i>
             </a>
 
-            <div class="col-md-12 row padding-0 shadow">
+            <div class="col-md-12 row padding-0 margin-0 shadow">
 
                 @foreach ($question_types as $key => $value)
                     <div class="col-md-2">
@@ -66,23 +66,27 @@
 
         <div class="survey-created padding-0" style="margin-top: 50px;">
             <div class="col-md-12">
-                <h4 class="h3 mb-4 title-new-survey text-left">1. Travel Award 2022*</h4>
-                <p class="text-left">Select one country only</p>
-
-                <select class="form-select" size="3" aria-label="size 3 select">
-                    <option class="survey-created-options shadow" value="1">Japan</option>
-                    <option class="survey-created-options shadow" value="2">Korea</option>
-                    <option class="survey-created-options shadow" value="3">USA</option>
-                </select>
-
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary col-md-12 survey-created-options shadow">
-                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Japan
-                    </label>
-                    <label class="btn btn-secondary col-md-12 survey-created-options shadow">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> Korea
-                    </label>
+                <div class="preview-title-container">
+                    <h4 class="h3 mb-4 title-new-survey text-left">1. Travel Award 2022*</h4>
+                    <p class="text-left">Select one country only</p>
                 </div>
+
+                <div class="bloc">
+                    <select class="select_class_preview" size="5">
+                        <option class="survey-created-options shadow" value="1">Japan</option>
+                        <option class="survey-created-options shadow" value="2">Korea</option>
+                        <option class="survey-created-options shadow" value="3">USA</option>
+                    </select>
+                </div>
+
+            <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary col-md-12 survey-created-options shadow">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Japan
+                </label>
+                <label class="btn btn-secondary col-md-12 survey-created-options shadow">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> Korea
+                </label>
+            </div> -->
 
             </div>
 
@@ -103,8 +107,8 @@
                     </div>
                     <div class="modal-body row">
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Write your question here..." id="exampleFormControlTextarea1"
-                                rows="3"></textarea>
+                            <textarea class="form-control" placeholder="Write your question here..." id="question"
+                                rows="2" required></textarea>
                         </div>
 
                         <div class="form-group">
