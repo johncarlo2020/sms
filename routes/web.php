@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/survey', [App\Http\Controllers\SurveyController::class, 'create'])->name('survey');
+Route::get('/survey/}|{id}', [App\Http\Controllers\SurveyController::class, 'show'])->name('survey_new');
+
 Route::post('/survey/addquestion', [App\Http\Controllers\QuestionsController::class, 'add_question'])->name('add_question');
 
 

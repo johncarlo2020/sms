@@ -1,7 +1,6 @@
 @extends('layouts.side')
 
 @section('survey')
-    <!-- <p>{{ $survey->name }}</p> -->
     <div class="row" style="padding-top: 40px;">
         <div class="col-md-4 text-right">
             <span class="survey-add-logo">
@@ -12,7 +11,7 @@
         </div>
         <div class="col-md-8">
             <h1 class="h3 mb-4 title-new-survey">
-                {{ $survey->name }}
+                {{ $survey[0]->name }}
             </h1>
         </div>
 
@@ -63,22 +62,26 @@
                 @endforeach            
             </div>
         </div>
-
+        
         <div class="survey-created padding-0" style="margin-top: 50px;">
+            @foreach($questions as $key => $value1)
             <div class="col-md-12 survey-created-container">
                 <div class="preview-title-container">
-                    <h4 class="h3 mb-4 title-new-survey text-left">1. title dito</h4>
-                    <p class="text-left">Select one country only</p>
+                    <h4 class="h3 mb-4 title-new-survey text-left">1. {{ $value1['name'] }}</h4>
+                    <p class="text-left">{{ $value1['description'] }}</p>
                 </div>
-
+               
                 <div class="bloc">
                     <select class="select_class_preview" size="5">
-                        <option class="survey-created-options shadow" value="1">Option</option>
+                        @foreach($value1['answer'][0] as $key => $ans)
+                        <option class="survey-created-options shadow" value="{{$ans->id}}">{{$ans->name}}</option>
+                     @endforeach
                     </select>
                 </div>
-
             </div>
+              @endforeach
         </div>
+      
 
     </div>
 
@@ -93,7 +96,7 @@
                         <!-- <h5 class="modal-title" id="modal-add-question">Start a new survey</h5> -->
                         <h4 class="h3 title-page">Add Question ( <span id="qtype"></span> )  </h4>
                         <input type="hidden" name="question_type" id="question_type">
-                        <input type="hidden" name="survey_id" id="survey_id" value="{{$survey->id}}">
+                        <input type="hidden" name="survey_id" id="survey_id" value="{{$survey[0]->id}}">
 
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
