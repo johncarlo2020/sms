@@ -12,93 +12,20 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card shadow h-100 survey-container-img">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                    alt="" style="width: 100%; height: 100%" />
+        @foreach($survey_list as $key => $value)
+            <div class="col-md-4">
+                <div class="card shadow h-100 survey-container-img">
+                    <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
+                        alt="" style="width: 100%; height: 100%" />
+                </div>
+                <a href="#">
+                    <p class="survey-tpl-title">{{ $value['name'] }}</p>
+                    <span class="survey-tpl-question-title">{{ $value['count'] }} questions</span>
+                </a>
             </div>
-            <a href="#">
-                <p class="survey-tpl-title">Text title</p>
-                <span class="survey-tpl-question-title">8 questions</span>
-            </a>
-        </div>
+        @endforeach
 
-        <div class="col-md-4">
-            <div class="card shadow h-100 survey-container-img">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                    alt="" style="width: 100%; height: 100%" />
-            </div>
-            <a href="#">
-                <p class="survey-tpl-title">Text title</p>
-                <span class="survey-tpl-question-title">8 questions</span>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card shadow h-100 survey-container-img">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                    alt="" style="width: 100%; height: 100%" />
-            </div>
-            <a href="#">
-                <p class="survey-tpl-title">Text title</p>
-                <span class="survey-tpl-question-title">8 questions</span>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card shadow h-100 survey-container-img">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                    alt="" style="width: 100%; height: 100%" />
-            </div>
-            <a href="#">
-                <p class="survey-tpl-title">Text title</p>
-                <span class="survey-tpl-question-title">8 questions</span>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card shadow h-100 survey-container-img">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                    alt="" style="width: 100%; height: 100%" />
-            </div>
-            <a href="#">
-                <p class="survey-tpl-title">Text title</p>
-                <span class="survey-tpl-question-title">8 questions</span>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card shadow h-100 survey-container-img">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                    alt="" style="width: 100%; height: 100%" />
-            </div>
-            <a href="#">
-                <p class="survey-tpl-title">Text title</p>
-                <span class="survey-tpl-question-title">8 questions</span>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card shadow h-100 survey-container-img">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                    alt="" style="width: 100%; height: 100%" />
-            </div>
-            <a href="#">
-                <p class="survey-tpl-title">Text title</p>
-                <span class="survey-tpl-question-title">8 questions</span>
-            </a>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card shadow h-100 survey-container-img">
-                <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                    alt="" style="width: 100%; height: 100%" />
-            </div>
-            <a href="#">
-                <p class="survey-tpl-title">Text title</p>
-                <span class="survey-tpl-question-title">8 questions</span>
-            </a>
-        </div>
+        
     </div>
 
     <!-- Modal Create Survey -->
