@@ -65,21 +65,19 @@
         </div>
 
         <div class="survey-created padding-0" style="margin-top: 50px;">
-            <!-- <div class="col-md-12">
+            <div class="col-md-12 survey-created-container">
                 <div class="preview-title-container">
-                    <h4 class="h3 mb-4 title-new-survey text-left">1. Travel Award 2022*</h4>
+                    <h4 class="h3 mb-4 title-new-survey text-left">1. title dito</h4>
                     <p class="text-left">Select one country only</p>
                 </div>
 
                 <div class="bloc">
                     <select class="select_class_preview" size="5">
-                        <option class="survey-created-options shadow" value="1">Japan</option>
-                        <option class="survey-created-options shadow" value="2">Korea</option>
-                        <option class="survey-created-options shadow" value="3">USA</option>
+                        <option class="survey-created-options shadow" value="1">Option</option>
                     </select>
                 </div>
 
-            </div> -->
+            </div>
         </div>
 
     </div>
