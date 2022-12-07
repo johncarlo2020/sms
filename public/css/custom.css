@@ -302,3 +302,8 @@ a{
 .survey-created-container{
     margin-top: 35px;
 }
+
+.preview-edit-container{
+    position: absolute !important;
+    right: 17px;
+}
