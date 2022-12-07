@@ -587,6 +587,14 @@
 
         <!-- end Modal -->
         <script>
+            $(document).on('click', '.btn-modal-cancel', function(){
+                $(".modal").on("hidden.bs.modal", function(){
+                    $('textarea').val('');
+                    $('input').val('');
+                    $('.answer-input-div').remove();
+                });
+            });
+
             $(document).ready(function() {
                 var answer = 0;
                 $(document).on('click', '.qtype_choice', function() {
@@ -615,16 +623,18 @@
                         dataType: "json",
                         type: "post",
                         success: function(data) {
-                            console.log(data);
+                            $('.btn-modal-cancel').trigger('click');                            
+                            // console.log(data);
+                            $('#new_data').attr('id', 'prev_data')
                             let survey_container = `
-                                <div class="col-md-12 survey-created-container">
+                                <div class="col-md-12 survey-created-container" id="survey_new_id_${data.question.survey_id}">
                                     <div class="preview-title-container">
-                                        <h4 class="h3 mb-4 title-new-survey text-left">${data.question.name}</h4>
+                                        <h4 class="h3 title-new-survey text-left">${data.question.name}</h4>
                                         <p class="text-left">${data.question.description}</p>
                                     </div>
 
                                     <div class="bloc">
-                                        <select class="select_class_preview" size="5"></select>
+                                        <select id="new_data" class="select_class_preview" size="5"></select>
                                     </div>
                                 </div>
                             `
@@ -634,12 +644,11 @@
                                 let survey_created = `                                        
                                     <option class="survey-created-options shadow" value="1">${item.name}</option>                                        
                                 `
-                                $(".select_class_preview").append(survey_created);
+                                $("#new_data").last().append(survey_created);
                             });
                         }
                     });
                 });
-
 
 
                 $(document).on('click', '.btn-add-question', function() {
@@ -657,7 +666,7 @@
                 $(document).on('click', '.btn-add-answer', function() {
 
                     let answer = `
-                        <div class="form-group">
+                        <div class="form-group answer-input-div">
                             <div class="col-md-12 row">
                                 <input type="text" class="answers form-control form-control-user col-md-11"
                                      placeholder="Answer" />

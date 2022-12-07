@@ -43,6 +43,7 @@ class SurveyController extends Controller
             $question['name']=$value->name;
             $question['description']=$value->description;
             $question['required']=$value->required;
+            $question['survey_id']=$value->survey_id;
             $question['type']=$value->question_type_id;
             $question['answer']=[];
              $q_id=$value->id;
@@ -51,7 +52,8 @@ class SurveyController extends Controller
 
             array_push($questions,$question);
         }
-        //dd($questions);
+
+        // dd($questions);
 
         return view('survey', compact('survey', 'question_types','questions'));
     }

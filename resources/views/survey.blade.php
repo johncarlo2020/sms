@@ -3,11 +3,16 @@
 @section('survey')
     <div class="row" style="padding-top: 40px;">
         <div class="col-md-4 text-right">
-            <span class="survey-add-logo">
-                <!-- <i class="fas fa-picture-o" aria-hidden="true"></i> -->
-                <i class="fas fa-regular fa-image"></i>
-                Add logo
-            </span>
+        
+            <div class="custom-file">
+                <span>
+                    <label class="survey-add-logo" for="customFile">
+                        <i class="fas fa-regular fa-image"></i>
+                        Add logo                    
+                    </label>
+                </span>
+                <input type="file" class="custom-file-input" id="customFile">
+            </div>
         </div>
         <div class="col-md-8">
             <h1 class="h3 mb-4 title-new-survey">
@@ -65,10 +70,11 @@
         
         <div class="survey-created padding-0" style="margin-top: 50px;">
             @foreach($questions as $key => $value1)
-            <div class="col-md-12 survey-created-container">
-                <div class="preview-title-container">
-                    <h4 class="h3 mb-4 title-new-survey text-left">1. {{ $value1['name'] }}</h4>
-                    <p class="text-left">{{ $value1['description'] }}</p>
+            <div class="col-md-12 survey-created-container" id="survey_id_{{$value1['survey_id']}}">
+                <div class="preview-title-container">         
+                              
+                    <h4 class="h3 title-new-survey text-left">{{$key+1}}. {{$value1['name']}}</h4>
+                    <p class="text-left">{{$value1['description']}}</p>
                 </div>
                
                 <div class="bloc">
@@ -189,7 +195,7 @@
                             </div>
 
                             <div class="form-group col-md-6 text-right">
-                                <button type="button" class="btn btn-secondary bgWhite txt-black pull-right"
+                                <button type="button" class="btn btn-modal-cancel btn-secondary bgWhite txt-black pull-right"
                                     data-bs-dismiss="modal">
                                     Cancel
                                 </button>

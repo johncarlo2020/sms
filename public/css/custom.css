@@ -156,6 +156,8 @@ a{
     padding: 26px;
     border: 1px dashed;
     font-size: 13px;
+    position: relative;
+    top: -20px;
 }
 
 .line-dashed{
@@ -204,6 +206,7 @@ a{
     color: #3f356f;
     font-family: system-ui;
     margin-top: 16px;
+    text-transform: capitalize;
 }
 
 
@@ -296,3 +299,6 @@ a{
     left: 20px;
 }
 
+.survey-created-container{
+    margin-top: 35px;
+}
