@@ -615,7 +615,27 @@
                         dataType: "json",
                         type: "post",
                         success: function(data) {
+                            console.log(data);
+                            let survey_container = `
+                                <div class="col-md-12 survey-created-container">
+                                    <div class="preview-title-container">
+                                        <h4 class="h3 mb-4 title-new-survey text-left">${data.question.name}</h4>
+                                        <p class="text-left">${data.question.description}</p>
+                                    </div>
 
+                                    <div class="bloc">
+                                        <select class="select_class_preview" size="5"></select>
+                                    </div>
+                                </div>
+                            `
+                            $(".survey-created").append(survey_container);
+
+                            data.answer.forEach(function(item,index){	
+                                let survey_created = `                                        
+                                    <option class="survey-created-options shadow" value="1">${item.name}</option>                                        
+                                `
+                                $(".select_class_preview").append(survey_created);
+                            });
                         }
                     });
                 });

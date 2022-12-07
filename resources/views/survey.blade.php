@@ -65,7 +65,7 @@
         </div>
 
         <div class="survey-created padding-0" style="margin-top: 50px;">
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
                 <div class="preview-title-container">
                     <h4 class="h3 mb-4 title-new-survey text-left">1. Travel Award 2022*</h4>
                     <p class="text-left">Select one country only</p>
@@ -79,18 +79,9 @@
                     </select>
                 </div>
 
-            <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary col-md-12 survey-created-options shadow">
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Japan
-                </label>
-                <label class="btn btn-secondary col-md-12 survey-created-options shadow">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> Korea
-                </label>
             </div> -->
-
-            </div>
-
         </div>
+
     </div>
 
     <!-- Modal Add Questions -->
@@ -125,7 +116,7 @@
                             <span class="modal-survey-name">ANSWERS</span>
 
                         <div class="answer-container">
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <div class="col-md-12 row">
                                     <input type="text" name="survey" class="form-control form-control-user col-md-11"
                                         id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Answer" />
@@ -135,7 +126,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         </div>
