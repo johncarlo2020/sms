@@ -55,9 +55,9 @@
 
                 @foreach ($question_types as $key => $value)
                     <div class="col-md-2">
-                        <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal-add-question">
+                        <a href="javascript:void(0);" class="qtype_choice" data-id="{{ $value->id }}" data-name="{{ $value->name }}" data-bs-toggle="modal" data-bs-target="#modal-add-question">
                             <i class="fas fa-regular fa-check" aria-hidden="true"></i>
-                            <p class="text-choice" data-id="{{ $value->id }}">{{ $value->name }}</p>
+                            <p class="text-choice"  data-id="{{ $value->id }}">{{ $value->name }}</p>
                         </a>
                     </div>
                 @endforeach            
@@ -94,27 +94,30 @@
     </div>
 
     <!-- Modal Add Questions -->
-    <form method="post" action="{{ route('survey') }}">
-        @csrf {{ csrf_field() }}
+    <form method="post" id="question_form" action="{{ route('survey') }}">
+     
         <div class="modal fade" id="modal-add-question" tabindex="-1" aria-labelledby="modal-add-question"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <!-- <h5 class="modal-title" id="modal-add-question">Start a new survey</h5> -->
-                        <h4 class="h3 title-page">Add Question</h4>
+                        <h4 class="h3 title-page">Add Question ( <span id="qtype"></span> )  </h4>
+                        <input type="hidden" name="question_type" id="question_type">
+                        <input type="hidden" name="survey_id" id="survey_id" value="{{$survey->id}}">
+
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body row">
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Write your question here..." id="question"
+                            <textarea class="form-control" name="question" placeholder="Write your question here..." id="question"
                                 rows="2" required></textarea>
                         </div>
 
                         <div class="form-group">
                             <span class="modal-survey-name">EXTRA DESCRIPTION</span>
-                            <input type="text" name="survey" class="form-control form-control-user"
-                                id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Select one answer" />
+                            <input type="text" name="description" class="form-control "
+                                  placeholder="Add DESCRIPTION" />
                         </div>
 
                         <!-- answers -->
@@ -143,10 +146,10 @@
                                 ADD ANSWER
                             </button>
 
-                            <button type="button" class="btn btn-secondary bgWhite txt-black btn-add-other-answer hide">
+                            <!-- <button type="button" class="btn btn-secondary bgWhite txt-black btn-add-other-answer hide">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 ADD "OTHER" ANSWER
-                            </button>
+                            </button> -->
 
                         </div>
 
@@ -185,7 +188,7 @@
                         <div class="col-md-12 row">
                             <div class="form-group col-md-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
+                                    <input class="form-check-input" name="required" type="checkbox" value="true"
                                         id="add-question-req">
                                     <label class="form-check-label" for="add-question-req">
                                         Required
@@ -199,7 +202,7 @@
                                     Cancel
                                 </button>
 
-                                <button type="submit" class="btn btn-primary btn-success pull-right">
+                                <button type="button" id="question_create" class="btn btn-primary btn-success pull-right">
                                     Create
                                 </button>
                             </div>

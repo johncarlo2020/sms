@@ -36,8 +36,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                        Interface
-                    </div> -->
+                                                                                                                        Interface
+                                                                                                                    </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -117,8 +117,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                        Addons
-                    </div> -->
+                                                                                                                        Addons
+                                                                                                                    </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item active">
@@ -137,17 +137,17 @@
 
                 <!-- Nav Item - Charts -->
                 <!-- <li class="nav-item">
-                        <a class="nav-link" href="charts.html">
-                            <i class="fas fa-fw fa-chart-area"></i>
-                            <span>Charts</span></a>
-                    </li> -->
+                                                                                                                        <a class="nav-link" href="charts.html">
+                                                                                                                            <i class="fas fa-fw fa-chart-area"></i>
+                                                                                                                            <span>Charts</span></a>
+                                                                                                                    </li> -->
 
                 <!-- Nav Item - Tables -->
                 <!-- <li class="nav-item">
-                        <a class="nav-link" href="tables.html">
-                            <i class="fas fa-fw fa-table"></i>
-                            <span>Tables</span></a>
-                    </li> -->
+                                                                                                                        <a class="nav-link" href="tables.html">
+                                                                                                                            <i class="fas fa-fw fa-table"></i>
+                                                                                                                            <span>Tables</span></a>
+                                                                                                                    </li> -->
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block" />
@@ -506,11 +506,11 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
-                                        <img class="img-profile rounded-circle"
-                                            src="img/undraw_profile.svg">
-                                    </a> -->
+                                                                                                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                                                                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
+                                                                                                                                        <img class="img-profile rounded-circle"
+                                                                                                                                            src="img/undraw_profile.svg">
+                                                                                                                                    </a> -->
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -587,26 +587,60 @@
 
         <!-- end Modal -->
         <script>
-            $(document).ready(function() {                                            
-                $(document).on('click', '.btn-add-question', function(){
-                    $('.add-question-container').addClass('hide');
-                    $('.choices-container').removeClass('hide');                    
+            $(document).ready(function() {
+                var answer = 0;
+                $(document).on('click', '.qtype_choice', function() {
+                    var name = $(this).attr('data-name');
+                    var id = $(this).attr('data-id');
+                    $('#qtype').html(name);
+                    $('#question_type').val(id);
                 });
 
-                $(document).on('click', '.choices-container > .btn-choice-minus', function(){
+                $(document).on('click', '#question_create', function() {
+                    const ans = [];
+                    var data = $('#question_form').serializeArray().reduce(function(obj, item) {
+                        obj[item.name] = item.value;
+                        return obj;
+                    }, {});
+                    $('.answers').each(function() {
+                        ans.push($(this).val());
+                    });
+                    $.ajax({
+                        url: "{{ route('add_question') }}",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            "form": data,
+                            "answers": ans,
+                        },
+                        dataType: "json",
+                        type: "post",
+                        success: function(data) {
+
+                        }
+                    });
+                });
+
+
+
+                $(document).on('click', '.btn-add-question', function() {
+                    $('.add-question-container').addClass('hide');
+                    $('.choices-container').removeClass('hide');
+                });
+
+                $(document).on('click', '.choices-container > .btn-choice-minus', function() {
                     $(this).parent().addClass('hide');
                     $('.add-question-container').removeClass('hide');
                 });
 
 
                 // Add input answer
-                $(document).on('click', '.btn-add-answer', function(){
-                    
+                $(document).on('click', '.btn-add-answer', function() {
+
                     let answer = `
                         <div class="form-group">
                             <div class="col-md-12 row">
-                                <input type="text" name="survey" class="form-control form-control-user col-md-11"
-                                    id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Answer" />
+                                <input type="text" class="answers form-control form-control-user col-md-11"
+                                     placeholder="Answer" />
                                 <div class="col-md-1">
                                     <span class="remove-answer">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
@@ -616,11 +650,11 @@
                         </div>
                         `
 
-                    $(".answer-container").append(answer);	
+                    $(".answer-container").append(answer);
                 });
 
                 // Remove Answer
-                $(document).on('click', '.remove-answer', function(){
+                $(document).on('click', '.remove-answer', function() {
                     $(this).parent().parent().parent().remove();
                 });
             });

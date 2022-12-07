@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Questions;
+use App\Models\AnswerModel;
+
 
 class QuestionsController extends Controller
 {
@@ -14,6 +17,41 @@ class QuestionsController extends Controller
     public function index()
     {
         //
+    }
+
+    public function add_question(Request $request)
+    {
+        $data['form'] = $request->form;
+        $data['answer'] = $request->answers;
+
+        if(empty($data['form']['required'])){
+            $required=0;
+        }else{
+            $required=1;
+        }
+
+        $inputs = [
+            'name' => $data['form']['question'],
+            'description' => $data['form']['description'],
+            'required' => $required,
+            'survey_id' => $data['form']['survey_id'],
+            'question_type_id' => $data['form']['question_type'],
+        ];
+        $question['question'] = Questions::create($inputs);
+
+        $question['answer']=[];
+
+       
+        foreach ($data['answer'] as $key => $value) {
+            $ans= [
+                'name' => $value,
+                'questions_id' => $question['question']->id
+            ];
+            $answer= AnswerModel::create($ans);
+            array_push($question['answer'],$answer);
+        }
+
+        return($question);
     }
 
     /**
