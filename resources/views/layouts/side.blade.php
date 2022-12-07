@@ -629,6 +629,17 @@
                             let survey_container = `
                                 <div class="col-md-12 survey-created-container" id="survey_new_id_${data.question.survey_id}">
                                     <div class="preview-title-container">
+                                    <div class="dropdown preview-edit-container">
+                                            <button class="btn  type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                            </button>
+                                        
+                                            <ul class="dropdown-menu">
+                                            <li><button class="dropdown-item" type="button">Edit</button></li>
+                                                <li><button class="dropdown-item" type="button">Delete</button></li>
+                                            </ul>
+                                        </div>
                                         <h4 class="h3 title-new-survey text-left">${data.question.name}</h4>
                                         <p class="text-left">${data.question.description}</p>
                                     </div>
