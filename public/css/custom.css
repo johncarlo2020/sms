@@ -47,7 +47,7 @@ a{
 }
 
 .border-none{
-    border: 0px;
+    border: 0px !important;
 }
 
 .hide{
@@ -69,11 +69,12 @@ a{
 }
 
 .nav-side-profile{
-    background-color: red;
+    background-color: #212529;
     height: 70px;
     width: 70px;
     border-radius: 20%;
     margin: 0 auto;
+    border: 2px solid #fff;
 }
 /* end side menu */
 
@@ -307,4 +308,66 @@ a{
 .preview-edit-container{
     position: absolute !important;
     right: 17px;
+}
+
+.preview-notice-title{
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    color: #3a4e5d;
+    font-family: system-ui;
+}
+
+.preview-notice-desc{
+    font-size: 19px !important;
+    color: #3a4e5d;
+    font-family: system-ui;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 22px;
+}
+
+.preview-notice-btn{
+    font-size: 20px;
+    font-weight: 700;
+    background: #2990cb;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.preview-new-survey-title{
+    color: black;
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    font-family: system-ui;
+}
+
+.preview-new-survey-desc{
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    color: black;
+    margin-top:15px;
+}
+
+.preview-new-survey-start{
+    font-size: 20px;
+    font-weight: 700;
+    background: #64b1c1;
+    color: #fff;
+    border: none;
+    padding: 14px 10px 14px 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.social-media-icons{
+    font-size: 35px;
+    border: 2.5px solid black;
+    border-radius: 50%;
+    height: 60px !important;
+    width: 60px !important;
+    line-height: 54px !important;
+    margin: 6px;
 }
