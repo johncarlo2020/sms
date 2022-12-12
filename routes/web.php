@@ -20,6 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/template', [App\Http\Controllers\SurveyController::class, 'index'])->name('template');
+Route::get('/preview', [App\Http\Controllers\SurveyController::class, 'preview'])->name('preview');
+
+
 Route::post('/survey', [App\Http\Controllers\SurveyController::class, 'create'])->name('survey');
 Route::get('/survey/}|{id}', [App\Http\Controllers\SurveyController::class, 'show'])->name('survey_new');
 

@@ -11,10 +11,27 @@ use App\Models\AnswerModel;
 class SurveyController extends Controller
 {
     //
-    public function index(Request $request, $id)
+    public function index()
     {
-        dd($Request);
-        return view('survey');
+       $surveys = SurveyModel::get();
+        $survey_list=[];
+
+        foreach ($surveys as $key => $value) {
+            $survey['name']=$value->name;
+
+            $question = Questions::where('survey_id', $value->id)->count();
+            $survey['count']=$question;
+            array_push($survey_list,$survey);
+            
+
+        }
+        return view('home', compact('survey_list'));
+    }
+
+    public function preview(){
+
+        return view('preview');
+        
     }
 
     public function create(Request $request)

@@ -36,8 +36,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                                                                                                                        Interface
-                                                                                                                    </div> -->
+                                                                                                                                                                Interface
+                                                                                                                                                            </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -49,201 +49,12 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Components:</h6>
-                            <a class="collapse-item" href="buttons.html">Buttons</a>
-                            <a class="collapse-item" href="cards.html">Cards</a>
+                            <a class="collapse-item" href="{{ route('template') }}">Template</a>
+                            <a class="collapse-item" href="{{ route('preview') }}">Preview</a>
                         </div>
                     </div>
                 </li>
 
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-user-cog"></i>
-                        <span>About</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-id-card"></i>
-                        <span>Research</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-book-open"></i>
-                        <span>Teaching & Learning</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-handshake"></i>
-                        <span>Service</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Learning & Growth</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-user-nurse"></i>
-                        <span>Clinical</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-toolbox"></i>
-                        <span>Functionality</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-star"></i>
-                        <span>Feedback</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-user"></i>
-                        <span>Resources</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Utilities:</h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Divider -->
-                <!-- <hr class="sidebar-divider" /> -->
-
-                <!-- Nav Item - Charts -->
-                <!-- <li class="nav-item">
-                                                                                                                        <a class="nav-link" href="charts.html">
-                                                                                                                            <i class="fas fa-fw fa-chart-area"></i>
-                                                                                                                            <span>Charts</span></a>
-                                                                                                                    </li> -->
-
-                <!-- Nav Item - Tables -->
-                <!-- <li class="nav-item">
-                                                                                                                        <a class="nav-link" href="tables.html">
-                                                                                                                            <i class="fas fa-fw fa-table"></i>
-                                                                                                                            <span>Tables</span></a>
-                                                                                                                    </li> -->
-
-                <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block" />
 
                 <!-- Sidebar Toggler (Sidebar) -->
@@ -305,7 +116,7 @@
                                     <a class="dropdown-item d-flex align-items-center" href="#">
                                         <div class="mr-3">
                                             <div class="icon-circle bg-primary">
-                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                <i class="fa fa-refresh" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                         <div>
@@ -600,11 +411,11 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                                                                                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                                                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
-                                                                                                                                        <img class="img-profile rounded-circle"
-                                                                                                                                            src="img/undraw_profile.svg">
-                                                                                                                                    </a> -->
+                                                                                                                                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                                                                                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
+                                                                                                                                                                                <img class="img-profile rounded-circle"
+                                                                                                                                                                                    src="img/undraw_profile.svg">
+                                                                                                                                                                            </a> -->
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -689,12 +500,12 @@
                     <!-- Modal body -->
                     <div class="modal-body text-center">
                         <h2 class="preview-notice-title">PLEASE NOTE</h2>
-                    <p class="preview-notice-desc">
-                        This is a survey preview, submitted <b>answers are NOT saved.</b>
-                        If you wish to fill the survey out, <a href="#" target="_blank">click here.</a>
-                    </p>
+                        <p class="preview-notice-desc">
+                            This is a survey preview, submitted <b>answers are NOT saved.</b>
+                            If you wish to fill the survey out, <a href="#" target="_blank">click here.</a>
+                        </p>
 
-                    <button class="preview-notice-btn col-md-8" type="submit">CONTINUE</button>
+                        <button class="preview-notice-btn col-md-8" type="submit">CONTINUE</button>
                     </div>
 
                 </div>
@@ -706,8 +517,8 @@
 
         <!-- end Modal -->
         <script>
-            $(document).on('click', '.btn-modal-cancel', function(){
-                $(".modal").on("hidden.bs.modal", function(){
+            $(document).on('click', '.btn-modal-cancel', function() {
+                $(".modal").on("hidden.bs.modal", function() {
                     $('textarea').val('');
                     $('input').val('');
                     $('.answer-input-div').remove();
@@ -715,7 +526,7 @@
             });
 
 
-            $(document).ready(function() {    
+            $(document).ready(function() {
                 // $('#modal-preview-notice').modal('show');      
                 var answer = 0;
                 $(document).on('click', '.qtype_choice', function() {
@@ -744,7 +555,7 @@
                         dataType: "json",
                         type: "post",
                         success: function(data) {
-                            $('.btn-modal-cancel').trigger('click');                            
+                            $('.btn-modal-cancel').trigger('click');
                             // console.log(data);
                             $('#new_data').attr('id', 'prev_data')
                             let survey_container = `
@@ -772,7 +583,7 @@
                             `
                             $(".survey-created").append(survey_container);
 
-                            data.answer.forEach(function(item,index){	
+                            data.answer.forEach(function(item, index) {
                                 let survey_created = `                                        
                                     <option class="survey-created-options shadow" value="1">${item.name}</option>                                        
                                 `
