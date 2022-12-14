@@ -1,16 +1,16 @@
 @extends('layouts.side') @section('survey')
     <!-- Preview Testing New Survey -->
-    <div class="col-md-12 row text-center align-middle margin-top-25percent" style="display: none;">
+    <div class="preview-new-survey-container col-md-12 row text-center align-middle margin-top-25percent">
         <h1 class="h3 mb-4 preview-new-survey-title">
             New Survey
         </h1>
         <p class="preview-new-survey-desc">Dear Sir or Madam, </p>
         <p class="preview-new-survey-desc">Please take a few minutes of your time to complete the following questionaire.</p>
-        <button class="preview-notice-btn col-md-4 margin-0-auto preview-new-survey-start" type="submit">START SURVEY
-            NOW</button>
+        <button class="preview-notice-btn col-md-4 margin-0-auto preview-new-survey-start" type="submit">START SURVEYNOW</button>
     </div>
 
     <!-- Preview Testing Show Survey List -->
+    <div class="preview-survey-list hide">
     <div class="col-md-12">
         <div class="col-md-8" style="margin: 0 auto;">
             <h1 class="h3 mb-4 title-new-survey">
@@ -67,6 +67,7 @@
                     <button type="submit" class="btn bgPrimary text-white">Submit</button>
                 </div>
             </div>
+    </div>
     </div>
 
     <!-- Thank you Feedback -->

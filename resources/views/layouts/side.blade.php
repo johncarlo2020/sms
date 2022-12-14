@@ -628,6 +628,12 @@
                     $(this).parent().parent().parent().remove();
                 });
 
+                // Start Survey Now - Show Preview
+                $(document).on('click', '.preview-new-survey-start', function(){
+                    $('.preview-new-survey-container').hide();
+                    $('.preview-survey-list').removeClass('hide');
+                });
+
                 $(document).on('click', '.preview-btn', function(){
                     $('#modal-preview-notice').modal('show'); 
                 });
