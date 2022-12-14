@@ -41,8 +41,8 @@ class QuestionsController extends Controller
 
         $question['answer']=[];
 
-       
-        foreach ($data['answer'] as $key => $value) {
+        if(!empty($data['answer'])){
+               foreach ($data['answer'] as $key => $value) {
             $ans= [
                 'name' => $value,
                 'questions_id' => $question['question']->id
@@ -51,6 +51,10 @@ class QuestionsController extends Controller
             array_push($question['answer'],$answer);
         }
 
+        }
+
+       
+     
         return($question);
     }
 
