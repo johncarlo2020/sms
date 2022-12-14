@@ -18,6 +18,8 @@ class SurveyController extends Controller
 
         foreach ($surveys as $key => $value) {
             $survey['name']=$value->name;
+            $survey['id']=$value->id;
+
 
             $question = Questions::where('survey_id', $value->id)->count();
             $survey['count']=$question;

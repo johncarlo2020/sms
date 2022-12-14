@@ -18,7 +18,7 @@
                     <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
                         alt="" style="width: 100%; height: 100%" />
                 </div>
-                <a href="#">
+                <a href="{{ url('/survey/') }}/ {{ $value['id']}}">
                     <p class="survey-tpl-title">{{ $value['name'] }}</p>
                     <span class="survey-tpl-question-title">{{ $value['count'] }} questions</span>
                 </a>
