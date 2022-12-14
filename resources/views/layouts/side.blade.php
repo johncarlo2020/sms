@@ -36,8 +36,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                                                                                                                                                                                                Interface
-                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                    Interface
+                                                                                                                                                                                                </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -57,9 +57,9 @@
                 <hr class="sidebar-divider d-none d-md-block" />
 
                 <!-- Sidebar Toggler (Sidebar) -->
-                <div class="text-center d-none d-md-inline">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
+                <!-- <div class="text-center d-none d-md-inline">
+                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                    </div> -->
             </ul>
             <!-- End of Sidebar -->
 
@@ -73,7 +73,10 @@
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
                         </button>
-
+                        <p class="h3 mb-4 title-page-modal navToggle" id="sidebarToggle" style="cursor: pointer;">
+                            <i class="fas fa-bars" style="color: #a7a4a4; margin-right: 30px;"></i>
+                            Survey
+                        </p>
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -410,11 +413,11 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                                                                                                                                                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                                                                                                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
-                                                                                                                                                                                                                <img class="img-profile rounded-circle"
-                                                                                                                                                                                                                    src="img/undraw_profile.svg">
-                                                                                                                                                                                                            </a> -->
+                                                                                                                                                                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                                                                                                                                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
+                                                                                                                                                                                                                    <img class="img-profile rounded-circle"
+                                                                                                                                                                                                                        src="img/undraw_profile.svg">
+                                                                                                                                                                                                                </a> -->
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -623,6 +626,11 @@
                     $(this).addClass(active);
                     $(prev_container).addClass(hide);
                     $(this).next(prev_container).removeClass(hide);
+                });
+
+                $(document).on('click', '.preview-survey-list-submit', function() {
+                    $('.preview-survey-list').hide();
+                    $('.ty-feedback-container').show();
                 });
             });
         </script>

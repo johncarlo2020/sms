@@ -92,7 +92,32 @@
                 @foreach ($question_types as $key => $value)
                     <div class="col-md-2">
                         <a href="javascript:void(0);" class="qtype_choice" data-id="{{ $value->id }}" data-name="{{ $value->name }}" data-bs-toggle="modal" data-bs-target="#modal-add-question">
-                            <i class="fas fa-regular fa-check" aria-hidden="true"></i>
+                            <!-- <i class="fas fa-regular fa-check" aria-hidden="true"></i> -->                           
+                            @switch($value->id)
+                                @case(1)
+                                     <i class="fas fa-regular fa-check" aria-hidden="true"></i>
+                                    @break
+                                @case(2)
+                                    <i class="fas fa-check-double"></i>                                       
+                                    @break
+                                @case(3) 
+                                    <i class="fas fa-font"></i>
+                                @break
+                                @case(4) 
+                                    <i class="fas fa-image"></i>
+                                @break
+                                @case(5) 
+                                    <i class="fas fa-star"></i>
+                                @break
+                                @case(6) 
+                                <i style="padding: 8px !important; position: relative; top: 6px;">
+                                    <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M406.6 374.6l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224l-293.5 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288l293.5 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"/></svg>
+                                </i>
+                                @break
+
+                                @default
+                                    <i class="fas fa-regular fa-check" aria-hidden="true"></i>
+                            @endswitch                        
                             <p class="text-choice"  data-id="{{ $value->id }}">{{ $value->name }}</p>
                         </a>
                     </div>
@@ -100,7 +125,7 @@
             </div>
         </div>
         
-        <div class="survey-created padding-0" style="margin-top: 50px;">
+        <div class="survey-created padding-0 col-md-8" style="margin-top: 50px;">
             @foreach($questions as $key => $value1)
             <div class="col-md-12 survey-created-container" id="survey_id_{{$value1['survey_id']}}">
                 <div class="preview-title-container">         
@@ -115,17 +140,25 @@
                             <li><button class="dropdown-item" type="button">Delete</button></li>
                         </ul>
                     </div>
-                    <h4 class="h3 title-new-survey text-left">{{$key+1}}. {{$value1['name']}}</h4>
+                    <h4 class="h3 title-new-survey text-left text-capitalize">{{$key+1}}. {{$value1['name']}}</h4>
                     <p class="text-left">{{$value1['description']}}</p>
                 </div>
-               
-                <div class="bloc">
+
+                @foreach($value1['answer'][0] as $key => $ans)
+                <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
+                    <input class="btn-check" type="radio" name="exampleRadios" id="{{$ans->id}}" value="{{$ans->id}}">
+                    <label class="select-preview text-left btn bgWhite text-black shadow text-capitalize" for="{{$ans->id}}">{{$ans->name}}</label> 
+                    <!-- <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                        -->
+                </div>
+                @endforeach
+
+                <!-- <div class="bloc">
                     <select class="select_class_preview" size="5">
                         @foreach($value1['answer'][0] as $key => $ans)
                         <option class="survey-created-options shadow" value="{{$ans->id}}">{{$ans->name}}</option>
                      @endforeach
                     </select>
-                </div>
+                </div> -->
             </div>
               @endforeach
         </div>

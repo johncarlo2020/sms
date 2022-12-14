@@ -1,13 +1,13 @@
 @extends('layouts.side') @section('survey')
     <!-- Preview Testing New Survey -->
-    <div class="preview-new-survey-container col-md-12 row text-center align-middle margin-top-25percent">
+    <div class="preview-new-survey-container col-md-12 row text-center align-middle margin-top-15percent">
         <h1 class="h3 mb-4 preview-new-survey-title">
             New Survey
         </h1>
         <p class="preview-new-survey-desc">Dear Sir or Madam, </p>
         <p class="preview-new-survey-desc">Please take a few minutes of your time to complete the following questionaire.</p>
-        <button class="preview-notice-btn col-md-4 margin-0-auto preview-new-survey-start" type="submit">START
-            SURVEYNOW</button>
+        <button class="preview-notice-btn col-md-4 margin-0-auto preview-new-survey-start" type="submit">START SURVEY
+            NOW</button>
     </div>
 
     <!-- Preview Testing Show Survey List -->
@@ -53,20 +53,17 @@
             </div>
         @endforeach
 
-        <div class="col-md-12">
-            <hr style="margin-top: 20px; border: 1px solid;">
-        </div>
-
         <div class="col-md-12 text-right">
             <div class="col-md-10" style="position: relative; right: 28px;">
-                <button type="submit" class="btn bgPrimary text-white">Submit</button>
+                <button type="submit" class="btn bgPrimary text-white preview-survey-list-submit">Submit</button>
             </div>
         </div>
     </div>
     </div>
+    </div>
 
     <!-- Thank you Feedback -->
-    <div class="col-md-12 row text-center" style="display: none;">
+    <div class="col-md-12 row text-center ty-feedback-container margin-top-15percent" style="display: none;">
         <h1 class="h3 mb-4 preview-new-survey-title">
             <span><i class="fas fa-thumbs-up fa-fw" style="font-size: 115px;"></i></span>
         </h1>
