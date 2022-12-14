@@ -2,7 +2,7 @@
 
 @section('survey')
     <div class="row" style="padding-top: 40px;">
-        <div class="col-md-4 text-right">
+        <div class="col-md-4 text-right" style="">
         
             <div class="custom-file">
                 <span>
@@ -14,10 +14,16 @@
                 <input type="file" class="custom-file-input" id="customFile">
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <h1 class="h3 mb-4 title-new-survey">
                 {{ $survey[0]->name }}
             </h1>
+        </div>
+
+        <div class="col-md-2">
+            <p class="preview-btn shadow">
+                <i class="fas fa-eye"></i>
+            </p>
         </div>
 
     <hr style="margin-top: 20px; border: 1px solid;">

@@ -502,10 +502,10 @@
                         <h2 class="preview-notice-title">PLEASE NOTE</h2>
                         <p class="preview-notice-desc">
                             This is a survey preview, submitted <b>answers are NOT saved.</b>
-                            If you wish to fill the survey out, <a href="#" target="_blank">click here.</a>
+                            If you wish to fill the survey out, <a href="#" target="_blank"><b>click here.</b></a>
                         </p>
 
-                        <button class="preview-notice-btn col-md-8" type="submit">CONTINUE</button>
+                        <a href="/preview" class="preview-notice-btn col-md-8" type="submit" style="margin-bottom: 25px;">CONTINUE</a>
                     </div>
 
                 </div>
@@ -527,7 +527,6 @@
 
 
             $(document).ready(function() {
-                // $('#modal-preview-notice').modal('show');      
                 var answer = 0;
                 $(document).on('click', '.qtype_choice', function() {
                     var name = $(this).attr('data-name');
@@ -593,7 +592,6 @@
                     });
                 });
 
-
                 $(document).on('click', '.btn-add-question', function() {
                     $('.add-question-container').addClass('hide');
                     $('.choices-container').removeClass('hide');
@@ -628,6 +626,21 @@
                 // Remove Answer
                 $(document).on('click', '.remove-answer', function() {
                     $(this).parent().parent().parent().remove();
+                });
+
+                $(document).on('click', '.preview-btn', function(){
+                    $('#modal-preview-notice').modal('show'); 
+                });
+
+                $(document).on('click', '.select-preview', function(){
+                    var active = 'bg-active';   
+                    var prev_container = '.preview-active-check-container';
+                    var hide = 'hide';                   
+
+                    $('.select-preview').removeClass(active);
+                    $(this).addClass(active);  
+                    $(prev_container).addClass(hide); 
+                    $(this).next(prev_container).removeClass(hide);                 
                 });
             });
         </script>
