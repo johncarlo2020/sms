@@ -490,7 +490,6 @@
         </div>
 
 
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <!-- Modal -->
 
@@ -503,7 +502,6 @@
                     $('.answer-input-div').remove();
                 });
             });
-
 
             $(document).ready(function() {
                 var answer = 0;
@@ -537,7 +535,7 @@
                             // console.log(data);
                             $('#new_data').attr('id', 'prev_data')
                             let survey_container = `
-                                <div class="col-md-12 survey-created-container" id="survey_new_id_${data.question.survey_id}">
+                                <div class="col-md-12 survey-created-container" id="new_data survey_new_id_${data.question.survey_id}">
                                     <div class="preview-title-container">
                                     <div class="dropdown preview-edit-container">
                                             <button class="btn  type="button"
@@ -550,22 +548,32 @@
                                                 <li><button class="dropdown-item" type="button">Delete</button></li>
                                             </ul>
                                         </div>
-                                        <h4 class="h3 title-new-survey text-left">${data.question.name}</h4>
+                                        <h4 class="h3 title-new-survey text-left text-capitalize">${data.question.name}</h4>
                                         <p class="text-left">${data.question.description}</p>
                                     </div>
 
-                                    <div class="bloc">
-                                        <select id="new_data" class="select_class_preview" size="5"></select>
-                                    </div>
+                
                                 </div>
                             `
                             $(".survey-created").append(survey_container);
 
+                            if(data.question.question_type_id == 3){
+                                let survey_text_answer = `
+                                    <div class="form-check col-md-12 text-center align-mddle">
+                                        <input type="text" name="text answer" class="form-control" placeholder="Text Answer">
+                                    </div>
+                                `
+                                $(".survey-created-container").last().append(survey_text_answer);
+                            }
+
                             data.answer.forEach(function(item, index) {
                                 let survey_created = `                                        
-                                    <option class="survey-created-options shadow" value="1">${item.name}</option>                                        
+                                    <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
+                                        <input class="btn-check" type="radio" name="exampleRadios" id="${item.id}" value="${item.name}">
+                                        <label class="select-preview text-left btn bgWhite text-black shadow text-capitalize" for="${item.id}">${item.name}</label>                                        
+                                    </div>                                       
                                 `
-                                $("#new_data").last().append(survey_created);
+                                $(".survey-created-container").last().append(survey_created);
                             });
                         }
                     });
@@ -616,15 +624,16 @@
                 $(document).on('click', '.preview-btn', function() {
                     $('#modal-preview-notice').modal('show');
                 });
-
+                
+                
                 $(document).on('click', '.select-preview', function() {
                     var active = 'bg-active';
                     var prev_container = '.preview-active-check-container';
                     var hide = 'hide';
 
-                    $('.select-preview').removeClass(active);
+                    // $('.select-preview').removeClass(active);
                     $(this).addClass(active);
-                    $(prev_container).addClass(hide);
+                    // $(prev_container).addClass(hide);
                     $(this).next(prev_container).removeClass(hide);
                 });
 

@@ -22,7 +22,7 @@
         </div>
         @foreach ($questions as $key => $value1)
             <div class="col-md-8" style="margin:0 auto;">
-                <div class="col-md-12 row text-center align-middle">
+                <div class="col-md-12 row text-center align-middle" style="margin-bottom: 50px;">
                     <div class="preview-title-container">
                         <div class="dropdown preview-edit-container">
                             <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,25 +34,33 @@
                                 <li><button class="dropdown-item" type="button">Delete</button></li>
                             </ul>
                         </div>
-                        <h4 class="h3 title-new-survey text-left">{{ $key + 1 }}. {{ $value1['name'] }}</h4>
+                        <h4 class="h3 title-new-survey text-left text-capitalize">{{ $key + 1 }}. {{ $value1['name'] }}</h4>
                         <p class="text-left">{{ $value1['description'] }}</p>
                     </div>
+
+                    @if($value1['type'] == 3)
+                        <div class="form-check col-md-12 text-center align-mddle">
+                            <input type="text" name="text answer" class="form-control" placeholder="Text Answer">
+                        </div>
+                    @endif
+
                     @foreach ($value1['answer'][0] as $key => $ans)
                         <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
-                            <input class="btn-check" type="radio" name="exampleRadios" id="option1" value="option1">
-                            <label class="text-left select-preview btn bgPrimary text-black"
-                                for="option1">{{ $ans->name }}</label>
-                            <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check"
-                                    aria-hidden="true"></i></div>
+                            <input class="btn-check" type="radio" name="{{ $ans['id'] }}" id="{{ $ans['id'] }}" value="{{ $ans['id'] }}">
+                            <label class="text-left select-preview btn bgPrimary text-black text-capitalize"
+                                for="{{ $ans['id'] }}">{{ $ans->name }}</label>
+                            <div class="preview-active-check-container hide">
+                                <i class="fas fa-check preview-active-check" aria-hidden="true"></i>
+                            </div>
                         </div>
                     @endforeach
-
 
                 </div>
 
             </div>
         @endforeach
-
+        <hr style="margin-top: 20px; border: 1px solid;">
+        
         <div class="col-md-12 text-right">
             <div class="col-md-10" style="position: relative; right: 28px;">
                 <button type="submit" class="btn bgPrimary text-white preview-survey-list-submit">Submit</button>

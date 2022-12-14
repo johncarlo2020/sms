@@ -80,7 +80,6 @@
             </div>
         </div>
 
-
     
         <div class="choices-container hide">
             <a href="javascript:void(0);" class="btn-choice-minus">
@@ -144,6 +143,12 @@
                     <p class="text-left">{{$value1['description']}}</p>
                 </div>
 
+                @if($value1['type'] == 3)
+                    <div class="form-check col-md-12 text-center align-mddle">
+                        <input type="text" name="text answer" class="form-control" placeholder="Text Answer">
+                    </div>
+                @endif
+
                 @foreach($value1['answer'][0] as $key => $ans)
                 <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
                     <input class="btn-check" type="radio" name="exampleRadios" id="{{$ans->id}}" value="{{$ans->id}}">
@@ -151,6 +156,7 @@
                     <!-- <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                        -->
                 </div>
                 @endforeach
+                
 
                 <!-- <div class="bloc">
                     <select class="select_class_preview" size="5">
