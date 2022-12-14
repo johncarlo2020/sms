@@ -17,6 +17,10 @@ a{
     border-radius: 0px !important;
 }
 
+.bgWhite{
+    background-color: #fff !important;
+}
+
 .bgPrimary{
     background-color: #ace5f0 !important;
 }
@@ -50,8 +54,8 @@ a{
     margin: 0 auto;
 }
 
-.margin-top-25percent{
-    margin-top: 25% !important;
+.margin-top-15percent{
+    margin-top: 15% !important;
 }
 
 .float-right{
@@ -86,6 +90,16 @@ a{
 /* side menu */
 .sidebar-dark .nav-item .nav-link, .sidebar-dark .nav-item .nav-link{
     padding: 9px !important;
+}
+
+.navToggle{
+    cursor: pointer;    
+    position: relative;
+    top: 16px;
+}
+
+.collapse-item:hover{
+    color: black !important;
 }
 
 .bg-side-menu{
