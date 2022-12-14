@@ -28,9 +28,33 @@ class SurveyController extends Controller
         return view('home', compact('survey_list'));
     }
 
-    public function preview(){
+    public function preview($id){
 
-        return view('preview');
+        
+        $survey = SurveyModel::where('id', $id)->get();
+        $question_types = Questiontype::get();
+        $question_list = Questions::where('survey_id', $id)->get();
+        $question;
+        $questions=[];
+        
+        
+        foreach ($question_list as $key => $value) {
+            $question['name']=$value->name;
+            $question['description']=$value->description;
+            $question['required']=$value->required;
+            $question['survey_id']=$value->survey_id;
+            $question['type']=$value->question_type_id;
+            $question['answer']=[];
+             $q_id=$value->id;
+            $answer=AnswerModel::where('questions_id',$q_id)->get();
+            array_push($question['answer'],$answer);
+
+            array_push($questions,$question);
+        }
+
+        // dd($questions);
+
+        return view('preview', compact('survey', 'question_types','questions'));
         
     }
 

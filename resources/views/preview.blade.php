@@ -6,67 +6,62 @@
         </h1>
         <p class="preview-new-survey-desc">Dear Sir or Madam, </p>
         <p class="preview-new-survey-desc">Please take a few minutes of your time to complete the following questionaire.</p>
-        <button class="preview-notice-btn col-md-4 margin-0-auto preview-new-survey-start" type="submit">START SURVEYNOW</button>
+        <button class="preview-notice-btn col-md-4 margin-0-auto preview-new-survey-start" type="submit">START
+            SURVEYNOW</button>
     </div>
 
     <!-- Preview Testing Show Survey List -->
     <div class="preview-survey-list hide">
-    <div class="col-md-12">
-        <div class="col-md-8" style="margin: 0 auto;">
-            <h1 class="h3 mb-4 title-new-survey">
-                New Survey
-            </h1>
+        <div class="col-md-12">
+            <div class="col-md-8" style="margin: 0 auto;">
+                <h1 class="h3 mb-4 title-new-survey">
+                    {{ $survey[0]->name }}
+                </h1>
+            </div>
+            <hr style="margin-top: 20px; border: 1px solid;">
         </div>
-        <hr style="margin-top: 20px; border: 1px solid;">
-    </div>
-
-    <div class="col-md-8" style="margin:0 auto;">
-            <div class="col-md-12 row text-center align-middle">
-                <div class="preview-title-container">
-                    <div class="dropdown preview-edit-container">
+        @foreach ($questions as $key => $value1)
+            <div class="col-md-8" style="margin:0 auto;">
+                <div class="col-md-12 row text-center align-middle">
+                    <div class="preview-title-container">
+                        <div class="dropdown preview-edit-container">
                             <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
                             </button>
-                        
+
                             <ul class="dropdown-menu">
-                            <li><button class="dropdown-item" type="button">Edit</button></li>
+                                <li><button class="dropdown-item" type="button">Edit</button></li>
                                 <li><button class="dropdown-item" type="button">Delete</button></li>
                             </ul>
                         </div>
-                        <h4 class="h3 title-new-survey text-left">test</h4>
-                        <p class="text-left">ttt</p>
+                        <h4 class="h3 title-new-survey text-left">{{ $key + 1 }}. {{ $value1['name'] }}</h4>
+                        <p class="text-left">{{ $value1['description'] }}</p>
                     </div>
+                    @foreach ($value1['answer'][0] as $key => $ans)
+                        <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
+                            <input class="btn-check" type="radio" name="exampleRadios" id="option1" value="option1">
+                            <label class="text-left select-preview btn bgPrimary text-black"
+                                for="option1">{{ $ans->name }}</label>
+                            <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check"
+                                    aria-hidden="true"></i></div>
+                        </div>
+                    @endforeach
 
-                    <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
-                        <input class="btn-check" type="radio" name="exampleRadios" id="option1" value="option1">
-                        <label class="text-left select-preview btn bgPrimary text-black" for="option1">Japan</label>      
-                        <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>          
-                    </div>
 
-                    <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
-                        <input class="btn-check" type="radio" name="exampleRadios" id="option2" value="option2">
-                        <label class="select-preview text-left btn bgPrimary text-black" for="option2">Korea</label> 
-                        <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                       
-                    </div>
-
-                    <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
-                        <input class="btn-check" type="radio" name="exampleRadios" id="option3" value="option3">
-                        <label class="select-preview text-left btn bgPrimary text-black" for="option3">USA</label>  
-                        <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                      
-                    </div>
                 </div>
-            
-            </div>
 
-            <div class="col-md-12">
-                <hr style="margin-top: 20px; border: 1px solid;">
             </div>
+        @endforeach
 
-            <div class="col-md-12 text-right">
-                <div class="col-md-10" style="position: relative; right: 28px;">
-                    <button type="submit" class="btn bgPrimary text-white">Submit</button>
-                </div>
+        <div class="col-md-12">
+            <hr style="margin-top: 20px; border: 1px solid;">
+        </div>
+
+        <div class="col-md-12 text-right">
+            <div class="col-md-10" style="position: relative; right: 28px;">
+                <button type="submit" class="btn bgPrimary text-white">Submit</button>
             </div>
+        </div>
     </div>
     </div>
 

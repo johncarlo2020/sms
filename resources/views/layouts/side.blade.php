@@ -36,8 +36,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                                                                                                                                                                Interface
-                                                                                                                                                            </div> -->
+                                                                                                                                                                                                Interface
+                                                                                                                                                                                            </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -50,7 +50,6 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Components:</h6>
                             <a class="collapse-item" href="{{ route('template') }}">Template</a>
-                            <a class="collapse-item" href="{{ route('preview') }}">Preview</a>
                         </div>
                     </div>
                 </li>
@@ -411,11 +410,11 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                                                                                                                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                                                                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
-                                                                                                                                                                                <img class="img-profile rounded-circle"
-                                                                                                                                                                                    src="img/undraw_profile.svg">
-                                                                                                                                                                            </a> -->
+                                                                                                                                                                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                                                                                                                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
+                                                                                                                                                                                                                <img class="img-profile rounded-circle"
+                                                                                                                                                                                                                    src="img/undraw_profile.svg">
+                                                                                                                                                                                                            </a> -->
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -487,30 +486,7 @@
             </div>
         </div>
 
-        <!-- Modal Preview -->
-        <div class="modal" id="modal-preview-notice">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header" style="border: none;">
-                        <h4 class="modal-title"></h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
 
-                    <!-- Modal body -->
-                    <div class="modal-body text-center">
-                        <h2 class="preview-notice-title">PLEASE NOTE</h2>
-                        <p class="preview-notice-desc">
-                            This is a survey preview, submitted <b>answers are NOT saved.</b>
-                            If you wish to fill the survey out, <a href="#" target="_blank"><b>click here.</b></a>
-                        </p>
-
-                        <a href="/preview" class="preview-notice-btn col-md-8" type="submit" style="margin-bottom: 25px;">CONTINUE</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <!-- Modal -->
@@ -629,24 +605,24 @@
                 });
 
                 // Start Survey Now - Show Preview
-                $(document).on('click', '.preview-new-survey-start', function(){
+                $(document).on('click', '.preview-new-survey-start', function() {
                     $('.preview-new-survey-container').hide();
                     $('.preview-survey-list').removeClass('hide');
                 });
 
-                $(document).on('click', '.preview-btn', function(){
-                    $('#modal-preview-notice').modal('show'); 
+                $(document).on('click', '.preview-btn', function() {
+                    $('#modal-preview-notice').modal('show');
                 });
 
-                $(document).on('click', '.select-preview', function(){
-                    var active = 'bg-active';   
+                $(document).on('click', '.select-preview', function() {
+                    var active = 'bg-active';
                     var prev_container = '.preview-active-check-container';
-                    var hide = 'hide';                   
+                    var hide = 'hide';
 
                     $('.select-preview').removeClass(active);
-                    $(this).addClass(active);  
-                    $(prev_container).addClass(hide); 
-                    $(this).next(prev_container).removeClass(hide);                 
+                    $(this).addClass(active);
+                    $(prev_container).addClass(hide);
+                    $(this).next(prev_container).removeClass(hide);
                 });
             });
         </script>

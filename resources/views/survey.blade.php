@@ -54,6 +54,32 @@
         </div>
     </div>
 
+       <!-- Modal Preview -->
+        <div class="modal" id="modal-preview-notice">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header" style="border: none;">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body text-center">
+                        <h2 class="preview-notice-title">PLEASE NOTE </h2>
+                        <p class="preview-notice-desc">
+                            This is a survey preview, submitted <b>answers are NOT saved.</b>
+                            If you wish to fill the survey out, <a href="#" target="_blank"><b>click here.</b></a>
+                        </p>
+
+                        <a href="{{ url('/preview/') }}/{{$survey[0]->id}} " class="preview-notice-btn col-md-8"
+                            type="submit" style="margin-bottom: 25px;">CONTINUE</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
     
         <div class="choices-container hide">
