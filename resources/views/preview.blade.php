@@ -19,17 +19,26 @@
             <td colspan="2"></td>
             <td></td>
         </tr>
+
         <tr class="max-500">
-            <td>2.</td>
-            <td>Respondent ID <br> (ID Responden)</td>
+            <td rowspan="2">2.</td>
+            <td rowspan="2">Respondent ID <br> (ID Responden)</td>
             <td colspan="2" style="position: relative;">
                 NRIC / My KAD No (No Kad Pengenalan) <br> 
                 <p>|_|_|_|_|_|_|_|_|_|_|_|_|</p>
-                <hr class="hr_custom_table">
-                <b>MRN</b> (if applicable) (jika berkenaan)
+                <!-- <hr class="hr_custom_table">
+                <b>MRN</b> (if applicable) (jika berkenaan) -->
             </td>
             <td></td>
         </tr>
+
+        <tr class="max-500">
+            <td colspan="2">
+                <b>MRN</b> (if applicable) (jika berkenaan) 
+            </td>
+            <td></td>
+        </tr>
+
         <tr>
             <td>3.</td>
             <td>Respondent Address <br>
