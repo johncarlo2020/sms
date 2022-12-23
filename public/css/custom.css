@@ -154,6 +154,46 @@ a{
     text-align: center;
 }
 
+.section-container{
+    /* line-height: 145px; */
+    text-align: center;
+}
+
+.part-container{
+    /* line-height: 145px; */
+    text-align: center;
+}
+
+.section_div{
+    background: red;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 0.35rem;
+    min-height: 200px;
+    max-height: 200px; 
+}
+
+.part_div{
+    background: turquoise;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 0.35rem;
+    min-height: 200px;
+    max-height: 200px; 
+}
+
+.section_title{
+    line-height: 206px;
+}
+
+.part_title{
+    line-height: 206px;
+}
+
 .start_new_survey{
     background: #303183;
     height: 100%;
@@ -431,3 +471,189 @@ a{
     right: 0;
     color: #eee;
 }
+
+/* section titles div containers */
+.section_title_container{
+    background-color: #d7f1f7;
+    border: 2px solid #278ba0;
+    border-radius: 10px;
+    color: black;
+    margin-top: 30px;
+    text-align: center;
+    padding: 0px;
+}
+
+.section_title_h1{
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.section_description{
+    background: #fff;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+/* section tables */
+#customers {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: none;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid black;
+    padding: 8px;
+    color: black
+  }
+  
+  /* #customers tr:nth-child(even){background-color: #f2f2f2;} */
+  
+  /* #customers tr:hover {background-color: #ddd;} */
+  
+  #customers th {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+    background-color: #00b0f0;
+    color: black;
+  }
+
+  .hr_custom_table{
+    border-top: 1px solid black;
+    opacity: 1;
+    background: red;
+    padding: 0px !important;
+    width: 100;
+    position: relative;
+    margin: 0px;
+  }
+
+  .vertical {
+    border-left: 1px solid black;
+    height: 100vh;
+    position: relative;
+    max-height: 130px;
+    left: 0;
+    background: red;
+}
+
+.small_box{
+    border: 1px solid black;
+    height: 20px;
+    width: 30px;
+    position: absolute;
+    margin-top: -32px;
+    margin-left: 66px;
+}
+
+.small_box_center{
+    border: 1px solid black;
+    height: 20px;
+    width: 30px;
+    position: absolute;
+    margin-top: -21px;
+    margin-left: 152px;
+}
+
+.custom_female_div{
+    position: absolute;
+    margin-top: -48px;
+    margin-left: 170px;
+}
+
+  .min-100 {
+    min-width: 100px;
+  }
+
+  .min-200 {
+    min-width: 200px;
+  }
+
+  .min-300{
+    min-width: 300px;
+  }
+
+  .min-400{
+    min-width: 400px;
+  }
+
+  .min-500{
+    min-width: 500px;
+  }
+
+  .min-600{
+    min-width: 600px;
+  }
+
+  .min-700{
+    min-width: 700px;
+  }
+
+  .max-100{
+    max-width: 100px;
+  }
+
+  .max-200{
+    max-width: 200px;
+  }
+
+  .max-300{
+    max-width: 300px;
+  }
+
+  .max-400{
+    max-width: 400px;
+  }
+
+  .max-500{
+    max-width: 500px;
+  }
+
+  .max-600{
+    max-width: 600px;
+  }
+
+  .max-700{
+    max-width: 700px;
+  }
+
+  .wd-100{
+    width: 100px;
+  }
+
+  .wd-200{
+    width: 200px;
+  }
+
+  .wd-300{
+    width: 300px;
+  }
+
+  .wd-400{
+    width: 400px;
+  }
+
+  .wd-500{
+    width: 500px;
+  }
+
+  .wd-600{
+    width: 600px;
+  }
+
+  .wd-700{
+    width: 700px;
+  }
+
+  /* height */
+
+  .h-50px{
+    height: 50px;
+  }
+
+  .h-100px{
+    height: 100px;
+  }

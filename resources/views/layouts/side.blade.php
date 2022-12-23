@@ -631,9 +631,9 @@
                     var prev_container = '.preview-active-check-container';
                     var hide = 'hide';
 
-                    // $('.select-preview').removeClass(active);
+                    $('.select-preview').removeClass(active);
                     $(this).addClass(active);
-                    // $(prev_container).addClass(hide);
+                    $(prev_container).addClass(hide);
                     $(this).next(prev_container).removeClass(hide);
                 });
 

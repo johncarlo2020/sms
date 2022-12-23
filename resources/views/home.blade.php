@@ -1,4 +1,68 @@
 @extends('layouts.side') @section('survey')
+
+    <!-- sections -->
+    <div class="col-md-11 row survey-template-container" >
+        <h1 class="h3 mb-4 title-page-modal">
+            SECTIONS
+        </h1>
+        
+        <div class="col-md-4 section-main-container">
+            <div class="card shadow h-100 section-container">
+                <a href="javascript:void(0);" class="section_div">                  
+                    <p class="section_title">SECTION A</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 section-main-container">
+            <div class="card shadow h-100 section-container">
+                <a href="javascript:void(0);" class="section_div">                  
+                    <p class="section_title">SECTION B</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 section-main-container">
+            <div class="card shadow h-100 section-container">
+                <a href="javascript:void(0);" class="section_div">                  
+                    <p class="section_title">SECTION C</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- // PART -->
+    <div class="col-md-11 row survey-template-container" >
+        <h1 class="h3 mb-4 title-page-modal">
+            PARTS
+        </h1>
+        
+        <div class="col-md-4 part-main-container">
+            <div class="card shadow h-100 part-container">
+                <a href="javascript:void(0);" class="part_div">                  
+                    <p class="part_title">PART 1</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 part-main-container">
+            <div class="card shadow h-100 part-container">
+                <a href="javascript:void(0);" class="part_div">                  
+                    <p class="part_title">PART 2</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 part-main-container">
+            <div class="card shadow h-100 part-container">
+                <a href="javascript:void(0);" class="part_div">                  
+                    <p class="part_title">PART 3</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
     <div class="col-md-11 row survey-template-container" >
         <h1 class="h3 mb-4 title-page-modal">
             Create your own survey or use a template
@@ -18,7 +82,7 @@
                     <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
                         alt="" style="width: 100%; height: 100%" />
                 </div>
-                <a href="{{ url('/survey/') }}/ {{ $value['id']}}">
+                <a href="{{url('/survey/')}}">
                     <p class="survey-tpl-title">{{ $value['name'] }}</p>
                     <span class="survey-tpl-question-title">{{ $value['count'] }} questions</span>
                 </a>
