@@ -4,7 +4,7 @@
         <h1 class="h3 mb-4 title-page-modal">
             Create your own survey or use a template
         </h1>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card shadow h-100 start-survey-container">
                 <a href="javascript:void(0);" class="start_new_survey" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <span><i class="fas fa-plus fa-fw"></i></span> <br />
@@ -14,10 +14,13 @@
         </div>
 
         @foreach($survey_list as $key => $value)
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card shadow h-100 survey-container-img">
-                    <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190625/ourmid/pngtree-office-desk-minimalist-background-picture-image_259887.jpg"
-                        alt="" style="width: 100%; height: 100%" />
+                    <!-- <img src="https://img.freepik.com/premium-photo/3d-customer-survey-data-analysis-background-rendered-image_18199-176.jpg?w=1480"
+                        alt="" style="max-height: 150px;" /> -->
+                    <!-- <img src="https://as1.ftcdn.net/v2/jpg/05/52/71/44/1000_F_552714489_sR1TnpRaVADav44QHg1AZTY3EJ5x5Rg6.jpg?w=1480"
+                        alt="" style="max-height: 150px;" />                         -->
+                        <img src="" alt="" class="survey-background-img">
                 </div>
                 <a href="{{url('/survey/')}}">
                     <p class="survey-tpl-title">{{ $value['name'] }}</p>
