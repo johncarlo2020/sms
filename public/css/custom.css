@@ -165,33 +165,40 @@ a{
 }
 
 .section_div{
-    background: red;
+    background: #212529;
     height: 100%;
     width: 100%;
     margin: 0 auto;
     color: #fff;
     border-radius: 0.35rem;
-    min-height: 200px;
-    max-height: 200px; 
+    min-height: 100px;
+    max-height: 100px; 
 }
 
 .part_div{
-    background: turquoise;
+    background: #3f356f;
     height: 100%;
     width: 100%;
     margin: 0 auto;
     color: #fff;
     border-radius: 0.35rem;
-    min-height: 200px;
-    max-height: 200px; 
+    min-height: 100px;
+    max-height: 100px; 
+}
+
+.part_select{
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #595c6f;
 }
 
 .section_title{
-    line-height: 206px;
+    line-height: 110px;
 }
 
 .part_title{
-    line-height: 206px;
+    line-height: 110px;
 }
 
 .start_new_survey{

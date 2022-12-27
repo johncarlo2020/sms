@@ -54,6 +54,46 @@
         </div>
     </div>
 
+    <div class="col-md-8 padding-0 margin-0-auto section-part-container" style="margin-top: 35px;">
+        <!-- sections -->
+        <div class="col-md-11 row" >    
+            <div class="col-md-4 section-main-container">
+                <div class="card shadow h-100 section-container">
+                    <a href="javascript:void(0);" 
+                        class="section_div" 
+                        data-id="" 
+                        data-name="" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#modal-add-section"
+                    >                                 
+                        <p class="section_title">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            CREATE SECTION
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 part-main-container">
+                <div class="card shadow h-100 part-container">
+                <a href="javascript:void(0);" 
+                        class="part_div" 
+                        data-id="" 
+                        data-name="" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#modal-add-part"
+                    >  
+                        <p class="part_title">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            CREATE PART
+                        </p>
+                    </a>
+                </div>
+            </div>
+            
+        </div>        
+    </div>
+
        <!-- Modal Preview -->
         <div class="modal" id="modal-preview-notice">
             <div class="modal-dialog modal-dialog-centered">
@@ -188,6 +228,25 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body row">
+
+                        <div class="form-group">
+                            <select class="form-select part_select">
+                                <option selected>-Select Section-</option>
+                                <option value="1">Section A</option>
+                                <option value="2">Section B</option>
+                                <option value="3">Section C</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-select part_select">
+                                <option selected>-Select Part-</option>
+                                <option value="1">Part 1</option>
+                                <option value="2">Part 2</option>
+                                <option value="3">Part 3</option>
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <textarea class="form-control" name="question" placeholder="Write your question here..." id="question"
                                 rows="2" required></textarea>
@@ -287,6 +346,88 @@
                             </div>
 
                         </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Modal Create Section -->
+    <form method="post" id="section_form" action="#">
+        <div class="modal fade" id="modal-add-section" tabindex="-1" aria-labelledby="modal-add-section"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">                     
+                        <h4 class="h3 title-page">Create Section  </h4>
+                        <input type="hidden" name="" id="">
+                        <input type="hidden" name="" id="" value="">
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="answer-container">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="text" name="survey" class="form-control form-control-user col-md-12" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Add Section Name" />
+                                        
+                                    <button type="button" id="section_create" class="btn btn-primary btn-success float-right col-md-2" style="margin-top: 10px;">
+                                        Create
+                                    </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <!-- Modal Create Part -->
+    <form method="post" id="part_form" action="#">
+        <div class="modal fade" id="modal-add-part" tabindex="-1" aria-labelledby="modal-add-part"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">                     
+                        <h4 class="h3 title-page">Create Part </h4>
+                        <input type="hidden" name="" id="">
+                        <input type="hidden" name="" id="" value="">
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="answer-container">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <select class="form-select part_select">
+                                            <option selected>-Sele  ct Section-</option>
+                                            <option value="1">Section A</option>
+                                            <option value="2">Section B</option>
+                                            <option value="3">Section C</option>
+                                        </select>
+
+                                        <input type="text" name="survey" class="form-control form-control-user col-md-12" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Add Part Name" />                                    
+
+                                        <button type="button" id="part_create" class="btn btn-primary btn-success float-right col-md-2" style="margin-top: 10px;">
+                                            Create
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     </div>
                 </div>
