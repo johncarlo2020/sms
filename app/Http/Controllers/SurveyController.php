@@ -77,7 +77,7 @@ class SurveyController extends Controller
 
         return redirect()->route('survey_new', [$survey->id]);
         //dd($su);
-        //return view('survey', compact('survey', 'question_types'));
+        return view('survey', compact('survey', 'question_types'));
     }
 
     public function show($id)
