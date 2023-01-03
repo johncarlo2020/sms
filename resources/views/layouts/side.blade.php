@@ -721,6 +721,8 @@
                     var active = 'bg-active';
                     var prev_container = '.preview-active-check-container';
                     var hide = 'hide';
+                    // var question_id = $('#question_id'+)
+
 
                     $('.select-preview').removeClass(active);
                     $(this).addClass(active);
@@ -739,6 +741,9 @@
                     window.location.replace("/template");
                 });
 
+                $(document).on('click', '.preview-survey-submit', function(){
+                    alert('save alert');
+                });
             });
         </script>
         <!-- Scripts -->
