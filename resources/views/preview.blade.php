@@ -667,7 +667,7 @@
     </div>
 
     </div>
-    </div>
+    <!-- </div> -->
 
     <!-- Thank you Feedback -->
     <div class="col-md-12 row text-center ty-feedback-container margin-top-15percent" style="display: none;">
