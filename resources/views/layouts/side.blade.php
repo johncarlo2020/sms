@@ -732,7 +732,7 @@
 
                 $(document).on('click', '.preview-survey-list-submit', function() {
                     alert('Survey Submitted!');
-                    $('.preview-survey-list').fadeOut();
+                    $('.preview-survey-list').hide();
                     $('.ty-feedback-container').fadeIn();
                 });
 
