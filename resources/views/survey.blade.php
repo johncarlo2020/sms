@@ -165,7 +165,10 @@
             </div>
         </div>
 
-            @foreach ($sections as $key1 => $value)
+    @foreach ($sections as $key1 => $value)
+    @if(empty($value['part']))
+    @else
+
         @foreach($value['part'] as $key2=>$value2)
             <div class="section_title_container">
                 <p class="section_title_h1">{{$value['name']}}: {{$value2['name']}}</p>
@@ -211,6 +214,7 @@
               @endif
         </div>
         @endforeach
+        @endif
     @endforeach
 
     
