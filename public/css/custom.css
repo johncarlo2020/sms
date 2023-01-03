@@ -25,6 +25,10 @@ a{
     background-color: #ace5f0 !important;
 }
 
+.bgPrimary2{
+    background-color: #73c0cf !important;
+}
+
 .bgPrimary.bg-active{
     background-color: #64b1c1 !important;
     color: #fff !important;
@@ -137,31 +141,31 @@ a{
     border-radius: 0.35rem;
 }
 
-.survey-template-container > div:nth-child(1n+1) > div > .survey-background-img{
+.survey-template-container >div:nth-child(1n+1) > a > div > .survey-background-img{
     background: url('https://t3.ftcdn.net/jpg/03/99/60/32/240_F_399603265_BH1fPn9Cv8iocVGTa27FONzT4uIP9zBB.jpg?w=1480') no-repeat 95% 70%;
     min-height: 100%;
     background-size: cover;
 }
 
-.survey-template-container >div:nth-child(2n+2) > div > .survey-background-img{
+.survey-template-container >div:nth-child(2n+2) > a > div > .survey-background-img{
     background: url('https://t3.ftcdn.net/jpg/03/39/27/88/240_F_339278803_TkGHfBtIeJPMvkLtBJJkbNa7hbLHzcrI.jpg?w=1380') no-repeat 95% 70%;
     min-height: 100%;
     background-size: cover;
 }
 
-.survey-template-container >div:nth-child(3n+3) > div > .survey-background-img{
+.survey-template-container >div:nth-child(3n+3) > a > div > .survey-background-img{
     background: url('https://t3.ftcdn.net/jpg/04/93/55/02/240_F_493550205_qnipuTXGIDtGUo7eaX076cAdicSIETX0.jpg?w=1380') no-repeat 95% 70%;
     min-height: 100%;
     background-size: cover;
 }
 
-.survey-template-container >div:nth-child(4n+5) > div > .survey-background-img{
+.survey-template-container >div:nth-child(4n+5) > a > div > .survey-background-img{
     background: url('https://as2.ftcdn.net/v2/jpg/04/84/14/29/1000_F_484142907_80h8KWlLiDMbW8WW5EKNXu15Vq1FGDQn.jpg?w=1380') no-repeat 95% 70%;
     min-height: 100%;
     background-size: cover;
 }
 
-.survey-template-container >div:nth-child(5n+6) > div > .survey-background-img{
+.survey-template-container >div:nth-child(5n+6) > a > div > .survey-background-img{
     background: url('https://t4.ftcdn.net/jpg/05/04/11/93/240_F_504119310_3CjHBRpVWv4HnKnpyQXK6zVRk4cZlnAL.jpg?w=1380') no-repeat 95% 70%;
     min-height: 100%;
     background-size: cover;
@@ -366,7 +370,7 @@ a{
 
 .survey-created{
     max-width: 90%;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 
 .survey-created-options{
@@ -428,6 +432,7 @@ a{
 
 .survey-created-container{
     margin-top: 35px;
+    padding: 0px;
 }
 
 .preview-edit-container{
@@ -497,6 +502,14 @@ a{
     margin: 6px;
 }
 
+
+.preview-survey-created{
+    padding: 10px 50px !important;
+    font-size: 22px !important;
+    color: #5340ff !important;
+    font-weight: bolder !important;
+}
+
 .preview-btn{
     background: #fff;    
     margin: 0;
@@ -535,6 +548,7 @@ a{
     font-size: 25px;
     font-family: cursive;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .section_description{

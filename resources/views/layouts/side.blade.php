@@ -6,7 +6,7 @@
             <!-- Sidebar -->
             <ul class="navbar-nav bg-side-menu sidebar sidebar-dark accordion" id="accordionSidebar">
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/template">
                     <div class="sidebar-brand-text mx-3">
                         <div class="sidebar-brand-text" style="font-size: 13px">
                             Survey Management System
@@ -21,7 +21,7 @@
                 <li class="nav-item" style="padding: 17px">
                     <div class="nav-side-profile"></div>
                     <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
-                        <span>Myco</span>
+                        <span>User</span>
                     </a>
                     <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
                         <span>Edit Profile</span>
@@ -48,7 +48,7 @@
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Components:</h6>
+                            <!-- <h6 class="collapse-header">Custom Components:</h6> -->
                             <a class="collapse-item" href="{{ route('template') }}">Template</a>
                         </div>
                     </div>
@@ -595,7 +595,7 @@
                         success: function(data) {
                             var $model = $('.parts_select');
                             $model.empty().append(function() {
-                                var output = '<option disabled>select a part</option>';
+                                var output = '<option>Select Part</option>';
                                 $.each(data, function(key, value) {
                                     output += '<option value="' + value['id'] +
                                         '">' + value[
@@ -620,7 +620,7 @@
                         success: function(data) {
                             var $model = $('.sections_select');
                             $model.empty().append(function() {
-                                var output = '<option disabled>select a section</option>';
+                                var output = '<option disabled selected>Select Section</option>';
                                 $.each(data, function(key, value) {
                                     output += '<option value="' + value['id'] +
                                         '">' + value[
@@ -729,9 +729,16 @@
                 });
 
                 $(document).on('click', '.preview-survey-list-submit', function() {
-                    $('.preview-survey-list').hide();
-                    $('.ty-feedback-container').show();
+                    alert('Survey Submitted!');
+                    $('.preview-survey-list').fadeOut();
+                    $('.ty-feedback-container').fadeIn();
                 });
+
+                $(document).on('click', '.preview-survey-created', function() {
+                    alert('Survey Created!');
+                    window.location.replace("/template");
+                });
+
             });
         </script>
         <!-- Scripts -->

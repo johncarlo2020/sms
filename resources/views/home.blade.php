@@ -18,14 +18,10 @@
 
       @foreach($survey_list as $key => $value)
             <div class="col-md-3">
-                <div class="card shadow h-100 survey-container-img">
-                    <!-- <img src="https://img.freepik.com/premium-photo/3d-customer-survey-data-analysis-background-rendered-image_18199-176.jpg?w=1480"
-                        alt="" style="max-height: 150px;" /> -->
-                    <!-- <img src="https://as1.ftcdn.net/v2/jpg/05/52/71/44/1000_F_552714489_sR1TnpRaVADav44QHg1AZTY3EJ5x5Rg6.jpg?w=1480"
-                        alt="" style="max-height: 150px;" />                         -->
-                        <img src="" alt="" class="survey-background-img">
-                </div>
                 <a href="{{url('/survey/')}}/{{ $value['id'] }}">
+                <div class="card shadow h-100 survey-container-img">
+                        <img src="" alt="" class="survey-background-img">
+                </div>                       
                     <p class="survey-tpl-title">{{ $value['name'] }}</p>
                     <span class="survey-tpl-question-title">{{ $value['count'] }} questions</span>
                 </a>

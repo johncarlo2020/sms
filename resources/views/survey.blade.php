@@ -25,9 +25,11 @@
                 <i class="fas fa-eye"></i>
             </p>
         </div>
+    </div>
 
     <hr style="margin-top: 20px; border: 1px solid;">
 
+    <div class="row" style="padding-top: 40px;">
     <div class="add-question-container">
         <div class="col-md-12 text-center">
             <span>
@@ -170,12 +172,11 @@
     @else
 
         @foreach($value['part'] as $key2=>$value2)
-            <div class="section_title_container">
-                <p class="section_title_h1">{{$value['name']}}: {{$value2['name']}}</p>
-                <p class="section_description">{{$value['name']}}: {{$value2['name']}}</p>
-            </div>
-
              <div class="survey-created padding-0 col-md-8" style="margin-top: 50px;">
+                <div class="section_title_container">
+                    <p class="section_title_h1">{{$value['name']}}: {{$value2['name']}}</p>
+                    <p class="section_description">{{$value['name']}}: {{$value2['name']}}</p>
+                </div>
             @if(empty($value2['questions']))
             @else
                 @foreach($value2['questions'] as $key => $value1)
@@ -216,9 +217,15 @@
         @endforeach
         @endif
     @endforeach
+    <hr style="margin-top: 20px; border: 1px solid;">
 
-    
 
+    <!-- Hide this if Empty Question -->
+    <div class="col-md-12 text-right preview-survey-created-container" style="margin-bottom: 130px;">
+        <div class="col-md-10">
+            <button type="button" class="btn bgPrimary2 preview-survey-created">Create</button>        
+        </div>
+    </div>
       
 
     </div>
