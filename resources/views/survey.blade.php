@@ -221,11 +221,14 @@
 
 
     <!-- Hide this if Empty Question -->
-    <div class="col-md-12 text-right preview-survey-created-container" style="margin-bottom: 130px;">
-        <div class="col-md-10">
-            <button type="button" class="btn bgPrimary2 preview-survey-created">Create</button>        
+    @if(empty($value2['questions']))
+    @else
+        <div class="col-md-12 text-right preview-survey-created-container" style="margin-bottom: 130px;">
+            <div class="col-md-10">
+                <button type="button" class="btn bgPrimary2 preview-survey-created">Create</button>        
+            </div>
         </div>
-    </div>
+    @endif
       
 
     </div>
