@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Questions;
-use App\Models\AnswerModel;
+use App\Models\part;
 
 
-class QuestionsController extends Controller
+class PartsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,55 +18,20 @@ class QuestionsController extends Controller
         //
     }
 
-    public function add_question(Request $request)
-    {
-        $data['form'] = $request->form;
-        $data['answer'] = $request->answers;
-
-        if(empty($data['form']['required'])){
-            $required=0;
-        }else{
-            $required=1;
-        }
-
-        $inputs = [
-            'name' => $data['form']['question'],
-            'description' => $data['form']['description'],
-            'required' => $required,
-            'survey_id' => $data['form']['survey_id'],
-            'question_type_id' => $data['form']['question_type'],
-            'parts_id'=> $data['form']['part']
-        ];
-        $question['question'] = Questions::create($inputs);
-
-        $question['answer']=[];
-
-        if(!empty($data['answer'])){
-            foreach ($data['answer'] as $key => $value) {
-                if(!empty($value)){
-                    $ans= [
-                    'name' => $value,
-                    'questions_id' => $question['question']->id
-                ];
-                $answer= AnswerModel::create($ans);
-                array_push($question['answer'],$answer);
-                }
-                
-            }
-        }
-
-       
-        return($question);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(request $request)
     {
-        //
+        $inputs = [
+            'name' => $request->part,
+            'section_id' => $request->section_id,
+        ];
+        $parts = part::create($inputs);
+
+        return($parts);
     }
 
     /**
@@ -87,9 +51,12 @@ class QuestionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(request $request)
     {
-        //
+        $id=$request->survey_id;
+        $parts = part::where('section_id', $id)->get();
+
+        return($parts);
     }
 
     /**

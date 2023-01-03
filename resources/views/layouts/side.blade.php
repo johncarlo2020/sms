@@ -36,8 +36,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                                                                                                                                                                                                    Interface
-                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                                Interface
+                                                                                                                                                                                                                                                                                                                                            </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -58,8 +58,8 @@
 
                 <!-- Sidebar Toggler (Sidebar) -->
                 <!-- <div class="text-center d-none d-md-inline">
-                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                    </div> -->
+                                                                                                                                                                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                                                                                                                                                                </div> -->
             </ul>
             <!-- End of Sidebar -->
 
@@ -413,11 +413,11 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                                                                                                                                                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                                                                                                                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
-                                                                                                                                                                                                                    <img class="img-profile rounded-circle"
-                                                                                                                                                                                                                        src="img/undraw_profile.svg">
-                                                                                                                                                                                                                </a> -->
+                                                                                                                                                                                                                                                                                                                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                                                                                                                                                                                                                                                                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
+                                                                                                                                                                                                                                                                                                                                                                <img class="img-profile rounded-circle"
+                                                                                                                                                                                                                                                                                                                                                                    src="img/undraw_profile.svg">
+                                                                                                                                                                                                                                                                                                                                                            </a> -->
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -495,16 +495,145 @@
 
         <!-- end Modal -->
         <script>
-            $(document).on('click', '.btn-modal-cancel', function() {
-                $(".modal").on("hidden.bs.modal", function() {
-                    $('textarea').val('');
-                    $('input').val('');
-                    $('.answer-input-div').remove();
-                });
-            });
-
             $(document).ready(function() {
-                var answer = 0;
+                $(document).on('click', '.btn-modal-cancel', function() {
+                    $(".modal").on("hidden.bs.modal", function() {
+                        $('textarea').val('');
+                        $('input').val('');
+                        $('.answer-input-div').remove();
+                    });
+                });
+
+                $(document).on('click', '#section_create', function() {
+                    var input = $('#create_section_input').val();
+                    var id = $('#survey_id').val();
+
+                    if (input == "") {
+                        alert('please input first');
+                    } else {
+                        $.ajax({
+                            url: "{{ route('add_section') }}",
+                            data: {
+                                "_token": "{{ csrf_token() }}",
+                                "survey_id": id,
+                                "section": input,
+                            },
+                            dataType: "json",
+                            type: "post",
+                            success: function(data) {
+                                location.reload();
+                            }
+
+
+                        });
+                    }
+
+                });
+
+                $(document).on('click', '#part_create', function() {
+                    var input = $('#create_part_input').val();
+                    var id = $('#section_list').val();
+
+                    if (input == "") {
+                        alert('please input first');
+                    } else {
+                        $.ajax({
+                            url: "{{ route('add_part') }}",
+                            data: {
+                                "_token": "{{ csrf_token() }}",
+                                "section_id": id,
+                                "part": input,
+                            },
+                            dataType: "json",
+                            type: "post",
+                            success: function(data) {
+                                location.reload();
+                            }
+
+
+                        });
+                    }
+
+                });
+
+
+                $(document).on('click', '.part_div', function() {
+                    var id = $('#survey_id').val();
+                    $.ajax({
+                        url: "{{ route('view_section') }}",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            "survey_id": id,
+                        },
+                        dataType: "json",
+                        type: "post",
+                        success: function(data) {
+                            var $model = $('#section_list');
+                            $model.empty().append(function() {
+                                var output = '<option disabled>select a section</option>';
+                                $.each(data, function(key, value) {
+                                    output += '<option value="' + value['id'] +
+                                        '">' + value[
+                                            'name'] + '</option>';
+                                });
+                                return output;
+                            });
+                        }
+                    });
+                });
+
+                $(document).on('change', '.sections_select', function() {
+                    var id = $(this).val();
+                    $.ajax({
+                        url: "{{ route('view_part') }}",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            "survey_id": id,
+                        },
+                        dataType: "json",
+                        type: "post",
+                        success: function(data) {
+                            var $model = $('.parts_select');
+                            $model.empty().append(function() {
+                                var output = '<option disabled>select a part</option>';
+                                $.each(data, function(key, value) {
+                                    output += '<option value="' + value['id'] +
+                                        '">' + value[
+                                            'name'] + '</option>';
+                                });
+                                return output;
+                            });
+                        }
+                    });
+                });
+
+                $(document).on('click', '.qtype_choice', function() {
+                    var id = $('#survey_id').val();
+                    $.ajax({
+                        url: "{{ route('view_section') }}",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            "survey_id": id,
+                        },
+                        dataType: "json",
+                        type: "post",
+                        success: function(data) {
+                            var $model = $('.sections_select');
+                            $model.empty().append(function() {
+                                var output = '<option disabled>select a section</option>';
+                                $.each(data, function(key, value) {
+                                    output += '<option value="' + value['id'] +
+                                        '">' + value[
+                                            'name'] + '</option>';
+                                });
+                                return output;
+                            });
+                        }
+                    });
+                });
+
+
+
                 $(document).on('click', '.qtype_choice', function() {
                     var name = $(this).attr('data-name');
                     var id = $(this).attr('data-id');
@@ -513,6 +642,8 @@
                 });
 
                 $(document).on('click', '#question_create', function() {
+                    var answer = 0;
+
                     const ans = [];
                     var data = $('#question_form').serializeArray().reduce(function(obj, item) {
                         obj[item.name] = item.value;
@@ -531,50 +662,7 @@
                         dataType: "json",
                         type: "post",
                         success: function(data) {
-                            $('.btn-modal-cancel').trigger('click');
-                            // console.log(data);
-                            $('#new_data').attr('id', 'prev_data')
-                            let survey_container = `
-                                <div class="col-md-12 survey-created-container" id="new_data survey_new_id_${data.question.survey_id}">
-                                    <div class="preview-title-container">
-                                    <div class="dropdown preview-edit-container">
-                                            <button class="btn  type="button"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                            </button>
-                                        
-                                            <ul class="dropdown-menu">
-                                            <li><button class="dropdown-item" type="button">Edit</button></li>
-                                                <li><button class="dropdown-item" type="button">Delete</button></li>
-                                            </ul>
-                                        </div>
-                                        <h4 class="h3 title-new-survey text-left text-capitalize">${data.question.name}</h4>
-                                        <p class="text-left">${data.question.description}</p>
-                                    </div>
-
-                
-                                </div>
-                            `
-                            $(".survey-created").append(survey_container);
-
-                            if(data.question.question_type_id == 3){
-                                let survey_text_answer = `
-                                    <div class="form-check col-md-12 text-center align-mddle">
-                                        <input type="text" name="text answer" class="form-control" placeholder="Text Answer">
-                                    </div>
-                                `
-                                $(".survey-created-container").last().append(survey_text_answer);
-                            }
-
-                            data.answer.forEach(function(item, index) {
-                                let survey_created = `                                        
-                                    <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
-                                        <input class="btn-check" type="radio" name="exampleRadios" id="${item.id}" value="${item.name}">
-                                        <label class="select-preview text-left btn bgWhite text-black shadow text-capitalize" for="${item.id}">${item.name}</label>                                        
-                                    </div>                                       
-                                `
-                                $(".survey-created-container").last().append(survey_created);
-                            });
+                            location.reload();
                         }
                     });
                 });
@@ -627,8 +715,8 @@
                 $(document).on('click', '.preview-btn', function() {
                     $('#modal-preview-notice').modal('show');
                 });
-                
-                
+
+
                 $(document).on('click', '.select-preview', function() {
                     var active = 'bg-active';
                     var prev_container = '.preview-active-check-container';

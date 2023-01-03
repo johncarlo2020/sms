@@ -28,5 +28,13 @@ Route::post('/survey', [App\Http\Controllers\SurveyController::class, 'create'])
 Route::get('/survey/{id}', [App\Http\Controllers\SurveyController::class, 'show'])->name('survey_new');
 
 Route::post('/survey/addquestion', [App\Http\Controllers\QuestionsController::class, 'add_question'])->name('add_question');
+Route::post('/survey/addSection', [App\Http\Controllers\SectionsController::class, 'create'])->name('add_section');
+Route::post('/survey/addPart', [App\Http\Controllers\PartsController::class, 'create'])->name('add_part');
+
+Route::post('/survey/viewSection', [App\Http\Controllers\SectionsController::class, 'show'])->name('view_section');
+Route::post('/survey/viewPart', [App\Http\Controllers\PartsController::class, 'show'])->name('view_part');
+
+
+
 
 

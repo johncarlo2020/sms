@@ -93,6 +93,8 @@
             
         </div>        
     </div>
+    
+
 
        <!-- Modal Preview -->
         <div class="modal" id="modal-preview-notice">
@@ -120,8 +122,7 @@
             </div>
         </div>
 
-    
-        <div class="choices-container hide">
+         <div class="choices-container hide">
             <a href="javascript:void(0);" class="btn-choice-minus">
                 <i class="fas fa-regular fa-minus-circle" aria-hidden="true"></i>
             </a>
@@ -134,19 +135,19 @@
                             <!-- <i class="fas fa-regular fa-check" aria-hidden="true"></i> -->                           
                             @switch($value->id)
                                 @case(1)
-                                     <i class="fas fa-regular fa-check" aria-hidden="true"></i>
+                                     <i class="fas fa-regular fa-check qtype_choice" aria-hidden="true"></i>
                                     @break
                                 @case(2)
-                                    <i class="fas fa-check-double"></i>                                       
+                                    <i class="fas fa-check-double qtype_choice"></i>                                       
                                     @break
                                 @case(3) 
-                                    <i class="fas fa-font"></i>
+                                    <i class="fas fa-font qtype_choice"></i>
                                 @break
                                 @case(4) 
-                                    <i class="fas fa-image"></i>
+                                    <i class="fas fa-image qtype_choice"></i>
                                 @break
                                 @case(5) 
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star qtype_choice"></i>
                                 @break
                                 @case(6) 
                                 <i style="padding: 8px !important; position: relative; top: 6px;">
@@ -155,7 +156,7 @@
                                 @break
 
                                 @default
-                                    <i class="fas fa-regular fa-check" aria-hidden="true"></i>
+                                    <i class="fas fa-regular fa-check qtype_choice" aria-hidden="true"></i>
                             @endswitch                        
                             <p class="text-choice"  data-id="{{ $value->id }}">{{ $value->name }}</p>
                         </a>
@@ -163,54 +164,62 @@
                 @endforeach            
             </div>
         </div>
-        
-        <div class="survey-created padding-0 col-md-8" style="margin-top: 50px;">
-            @foreach($questions as $key => $value1)
-            <div class="col-md-12 survey-created-container" id="survey_id_{{$value1['survey_id']}}">
-                <div class="preview-title-container">         
-                    <div class="dropdown preview-edit-container">
-                        <button class="btn  type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                        </button>
-                        
-                        <ul class="dropdown-menu">
-                            <li><button class="dropdown-item" type="button">Edit</button></li>
-                            <li><button class="dropdown-item" type="button">Delete</button></li>
-                        </ul>
-                    </div>
-                    <h4 class="h3 title-new-survey text-left text-capitalize">{{$key+1}}. {{$value1['name']}}</h4>
-                    <p class="text-left">{{$value1['description']}}</p>
-                </div>
 
-                @if($value1['type'] == 3)
-                    <div class="form-check col-md-12 text-center align-mddle">
-                        <input type="text" name="text answer" class="form-control" placeholder="Text Answer">
-                    </div>
-                @endif
-
-                @foreach($value1['answer'][0] as $key => $ans)
-                <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
-                    <input class="btn-check" type="radio" name="exampleRadios" id="{{$ans->id}}" value="{{$ans->id}}">
-                    <label class="select-preview text-left btn bgWhite text-black shadow text-capitalize" for="{{$ans->id}}">{{$ans->name}}</label> 
-                    <!-- <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                        -->
-                </div>
-                @endforeach
-                
-
-                <!-- <div class="bloc">
-                    <select class="select_class_preview" size="5">
-                        @foreach($value1['answer'][0] as $key => $ans)
-                        <option class="survey-created-options shadow" value="{{$ans->id}}">{{$ans->name}}</option>
-                     @endforeach
-                    </select>
-                </div> -->
+            @foreach ($sections as $key1 => $value)
+        @foreach($value['part'] as $key2=>$value2)
+            <div class="section_title_container">
+                <p class="section_title_h1">{{$value['name']}}: {{$value2['name']}}</p>
+                <p class="section_description">{{$value['name']}}: {{$value2['name']}}</p>
             </div>
-              @endforeach
+
+             <div class="survey-created padding-0 col-md-8" style="margin-top: 50px;">
+            @if(empty($value2['questions']))
+            @else
+                @foreach($value2['questions'] as $key => $value1)
+                    <div class="col-md-12 survey-created-container" id="survey_id_{{$value1['survey_id']}}">
+                        <div class="preview-title-container">         
+                            <div class="dropdown preview-edit-container">
+                                <button class="btn  type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                </button>
+                                
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" type="button">Edit</button></li>
+                                    <li><button class="dropdown-item" type="button">Delete</button></li>
+                                </ul>
+                            </div>
+                            <h4 class="h3 title-new-survey text-left text-capitalize">{{$key+1}}. {{$value1['questions_name']}}</h4>
+                            <p class="text-left">{{$value1['questions_description']}}</p>
+                        </div>
+
+                        @if($value1['type'] == 3)
+                            <div class="form-check col-md-12 text-center align-mddle">
+                                <input type="text" name="text answer" class="form-control" placeholder="Text Answer">
+                            </div>
+                        @else
+                            @foreach($value1['answers'] as $key => $ans)
+                            <div class="form-check col-md-12 row text-center align-middle" style="margin:0 auto;">
+                                <input class="btn-check" type="radio" name="exampleRadios" id="{{$ans}}" value="{{$ans}}">
+                                <label class="select-preview text-left btn bgWhite text-black shadow text-capitalize" for="{{$ans}}">{{$ans}}</label> 
+                                <!-- <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                        -->
+                            </div>
+                            @endforeach
+                        @endif
+                    </div>
+                @endforeach
+              @endif
         </div>
+        @endforeach
+    @endforeach
+
+    
+
       
 
     </div>
+
+    
 
     <!-- Modal Add Questions -->
     <form method="post" id="question_form" action="{{ route('survey') }}">
@@ -230,20 +239,14 @@
                     <div class="modal-body row">
 
                         <div class="form-group">
-                            <select class="form-select part_select">
-                                <option selected>-Select Section-</option>
-                                <option value="1">Section A</option>
-                                <option value="2">Section B</option>
-                                <option value="3">Section C</option>
+                            <select name="section" class="form-select sections_select" >
+                                <option  disabled>-Select Section-</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <select class="form-select part_select">
+                            <select name="part" class="form-select parts_select" >
                                 <option selected>-Select Part-</option>
-                                <option value="1">Part 1</option>
-                                <option value="2">Part 2</option>
-                                <option value="3">Part 3</option>
                             </select>
                         </div>
 
@@ -353,6 +356,8 @@
         </div>
     </form>
 
+    
+
     <!-- Modal Create Section -->
     <form method="post" id="section_form" action="#">
         <div class="modal fade" id="modal-add-section" tabindex="-1" aria-labelledby="modal-add-section"
@@ -373,7 +378,7 @@
                             <div class="answer-container">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" name="survey" class="form-control form-control-user col-md-12" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Add Section Name" />
+                                        <input type="text" name="survey" class="form-control form-control-user col-md-12" id="create_section_input" aria-describedby="emailHelp" placeholder="Add Section Name" />
                                         
                                     <button type="button" id="section_create" class="btn btn-primary btn-success float-right col-md-2" style="margin-top: 10px;">
                                         Create
@@ -411,14 +416,11 @@
                             <div class="answer-container">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <select class="form-select part_select">
-                                            <option selected>-Sele  ct Section-</option>
-                                            <option value="1">Section A</option>
-                                            <option value="2">Section B</option>
-                                            <option value="3">Section C</option>
+                                        <select class="form-select part_select" id="section_list">
+                                            <option selected>-Select Section-</option>
                                         </select>
 
-                                        <input type="text" name="survey" class="form-control form-control-user col-md-12" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Add Part Name" />                                    
+                                        <input type="text" name="survey" class="form-control form-control-user col-md-12" id="create_part_input" aria-describedby="emailHelp" placeholder="Add Part Name" />                                    
 
                                         <button type="button" id="part_create" class="btn btn-primary btn-success float-right col-md-2" style="margin-top: 10px;">
                                             Create

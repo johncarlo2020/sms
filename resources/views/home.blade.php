@@ -13,7 +13,10 @@
             </div>
         </div>
 
-        @foreach($survey_list as $key => $value)
+ 
+
+
+      @foreach($survey_list as $key => $value)
             <div class="col-md-3">
                 <div class="card shadow h-100 survey-container-img">
                     <!-- <img src="https://img.freepik.com/premium-photo/3d-customer-survey-data-analysis-background-rendered-image_18199-176.jpg?w=1480"
@@ -22,13 +25,13 @@
                         alt="" style="max-height: 150px;" />                         -->
                         <img src="" alt="" class="survey-background-img">
                 </div>
-                <a href="{{url('/survey/')}}">
+                <a href="{{url('/survey/')}}/{{ $value['id'] }}">
                     <p class="survey-tpl-title">{{ $value['name'] }}</p>
                     <span class="survey-tpl-question-title">{{ $value['count'] }} questions</span>
                 </a>
             </div>
         @endforeach
-    </div>
+            </div>
 
 
 
