@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SurveyModel;
-use App\Models\Questiontype;
+use App\Models\QuestionType;
 use App\Models\Questions;
 use App\Models\AnswerModel;
 use App\Models\Section;
