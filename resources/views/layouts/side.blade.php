@@ -721,12 +721,9 @@
                 });
 
                 $('.formats_select').change(function() {
-                    var selected = $(this).val();
+                    var selected = $(this).val();                    
 
-                    console.log(selected);
-
-                    if(selected == 'row'){
-                        console.log('true row');
+                    if(selected == 'column'){                        
                         $('.btn-add-sub-question').removeClass('hide');
                         $('.sub-question-container').removeClass('hide');
                     } else {

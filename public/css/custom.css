@@ -626,6 +626,15 @@ a{
     margin-left: 170px;
 }
 
+.display_format{
+    width: 40%;
+    float: right;
+    right: 30%;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+}
+
   .min-100 {
     min-width: 100px;
   }

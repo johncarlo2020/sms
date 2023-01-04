@@ -325,8 +325,8 @@
                                         <li><button class="dropdown-item" type="button">In a Column</button></li>
                                     </ul> -->
 
-                                    <div class="form-group" style="width: 70%; float: right;">
-                                        <select name="section" class="form-select formats_select" id="formats_select">
+                                    <div class="display_format">
+                                        <select name="section" class="form-select formats_select">
                                             <option value="">-Select Format-</option>
                                             <option value="row" id="format_row">In a Row</option>
                                             <option value="column" id="format_column">In a Column</option>
