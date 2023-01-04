@@ -23,12 +23,12 @@
                     <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
                         <span>User</span>
                     </a>
-                    <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
+                    <a class="nav-link padding-0" href="{{ route('profile') }}" style="padding: 0px !important;">
                         <span>Edit Profile</span>
                     </a>
-                    <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
-                        <span>Generate Resume</span>
-                    </a>
+                    <!-- <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
+                                                <span>Generate Resume</span>
+                                            </a> -->
                 </li>
 
                 <!-- Divider -->
@@ -36,8 +36,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                                                                                                                                                                                                                                                                                                                                                Interface
-                                                                                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                                                        Interface
+                                                                                                                                                                                                                                                                                                                                                                    </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -58,8 +58,8 @@
 
                 <!-- Sidebar Toggler (Sidebar) -->
                 <!-- <div class="text-center d-none d-md-inline">
-                                                                                                                                                                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                                                                                                                                                                </div> -->
+                                                                                                                                                                                            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                                                                                                                                                                                        </div> -->
             </ul>
             <!-- End of Sidebar -->
 
@@ -326,75 +326,42 @@
                                 </div>
                             </li>
 
-                            <!-- Nav Item - Messages -->
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-user-cog"></i>
-                                    <!-- Counter - Messages -->
-                                </a>
-                                <!-- Dropdown - Messages -->
-                                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                    aria-labelledby="messagesDropdown">
-                                    <h6 class="dropdown-header">My Account</h6>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
-                                        <div class="font-weight-bold">
-                                            <div class="text-truncate">
-                                                Settings
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                        <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">                                          
-                                            <div class="font-weight-bold">
-                                                <div class="text-truncate">
-                                                    {{ __('Logout') }}
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none">
-                                            @csrf
-                                        </form>                                    
-                                </div>
-                            </li>
-
                             <div class="topbar-divider d-none d-sm-block"></div>
 
-                            <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
-                                <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                                                                                                                                                                                                                                                                                                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                                                                                                                                                                                                                                                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
-                                                                                                                                                                                                                                                                                                                                                                <img class="img-profile rounded-circle"
-                                                                                                                                                                                                                                                                                                                                                                    src="img/undraw_profile.svg">
-                                                                                                                                                                                                                                                                                                                                                            </a> -->
-                                <!-- Dropdown - User Information -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                    aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Profile
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Settings
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal"
-                                        data-target="#logoutModal">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                    </a>
-                                </div>
-                            </li>
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrator</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg" style="background-color: #212529;">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
+                            </div>
+                        </li>
+                
                         </ul>
                     </nav>
                     <!-- End of Topbar -->
@@ -574,7 +541,8 @@
                         success: function(data) {
                             var $model = $('.sections_select');
                             $model.empty().append(function() {
-                                var output = '<option disabled selected>Select Section</option>';
+                                var output =
+                                    '<option disabled selected>Select Section</option>';
                                 $.each(data, function(key, value) {
                                     output += '<option value="' + value['id'] +
                                         '">' + value[
@@ -599,6 +567,7 @@
                     var answer = 0;
 
                     const ans = [];
+                    const sub_question = [];
                     var data = $('#question_form').serializeArray().reduce(function(obj, item) {
                         obj[item.name] = item.value;
                         return obj;
@@ -606,12 +575,18 @@
                     $('.answers').each(function() {
                         ans.push($(this).val());
                     });
+
+                    $('.sub_questions').each(function() {
+                        sub_question.push($(this).val());
+                    });
+                    console.log(sub_question);
                     $.ajax({
                         url: "{{ route('add_question') }}",
                         data: {
                             "_token": "{{ csrf_token() }}",
                             "form": data,
                             "answers": ans,
+                            "sub_questions": sub_question
                         },
                         dataType: "json",
                         type: "post",
@@ -657,11 +632,11 @@
 
                 // Add Sub Question
                 $(document).on('click', '.btn-add-sub-question', function() {
-
+                    $('.sub-question-container').removeClass('hide');
                     let sub_question = `                        
                         <div class="form-group answer-input-div">
                             <div class="col-md-12 row">
-                                <input type="text" class="answers form-control form-control-user col-md-11"
+                                <input type="text" class="form-control form-control-user col-md-11 sub_questions"
                                     placeholder="Sub Question" />
                                 <div class="col-md-1">
                                     <span class="remove-answer">
@@ -674,7 +649,7 @@
 
                     $(".sub-question-container").append(sub_question);
                 });
-                
+
 
                 // Remove Answer
                 $(document).on('click', '.remove-answer', function() {
@@ -716,25 +691,22 @@
                     window.location.replace("/template");
                 });
 
-                $(document).on('click', '.preview-survey-submit', function(){
+                $(document).on('click', '.preview-survey-submit', function() {
                     alert('save alert');
                 });
 
                 $('.formats_select').change(function() {
                     var selected = $(this).val();
 
-                    console.log(selected);
-
-                    if(selected == 'row'){
-                        console.log('true row');
+                    if (selected == 'column') {
                         $('.btn-add-sub-question').removeClass('hide');
-                        $('.sub-question-container').removeClass('hide');
+                        $('.sub-question-container').addClass('removeSubQuestion');
                     } else {
-                        // $('.btn-add-sub-question').addClass('hide');
-                        // $('.sub-question-container').addClass('hide');
+                        $('.btn-add-sub-question').addClass('hide');
+                        $('.removeSubQuestion').addClass('hide');
                     }
                 });
-                
+
             });
         </script>
         <!-- Scripts -->

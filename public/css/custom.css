@@ -283,6 +283,12 @@ a{
     font-family: system-ui;
 }
 
+.title-sub-question{
+    margin-left: 17px;
+    font-size: 17px !important;
+    color: #212529 !important;
+}
+
 .survey-add-logo{
     padding: 26px;
     border: 1px dashed;
@@ -626,6 +632,15 @@ a{
     margin-left: 170px;
 }
 
+.display_format{
+    width: 40%;
+    float: right;
+    right: 30%;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+}
+
   .min-100 {
     min-width: 100px;
   }
@@ -718,4 +733,35 @@ a{
 
   .h-100px{
     height: 100px;
+  }
+
+
+  /* profile */
+  .profile-img-background{
+    width: 100%;
+    height: 100%;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  .profile-img-container{
+    background: #212529;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  .profile-update{
+    padding: 10px 30px;
+    /* border: 1px dashed; */
+    font-size: 13px;
+    position: relative;
+    /* top: -20px; */
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+    bottom: -113px;
   }

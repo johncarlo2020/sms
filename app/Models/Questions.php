@@ -12,6 +12,6 @@ class Questions extends Model
     protected $table = 'questions';
 
     protected $fillable = [
-        'name', 'description', 'required','survey_id','question_type_id','parts_id'
+        'name', 'description', 'required','survey_id','question_type_id','parts_id','sub_questions'
     ];
 }

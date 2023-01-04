@@ -34,6 +34,9 @@ Route::post('/survey/addPart', [App\Http\Controllers\PartsController::class, 'cr
 Route::post('/survey/viewSection', [App\Http\Controllers\SectionsController::class, 'show'])->name('view_section');
 Route::post('/survey/viewPart', [App\Http\Controllers\PartsController::class, 'show'])->name('view_part');
 
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+
+
 
 
 

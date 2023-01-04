@@ -23,11 +23,18 @@ class QuestionsController extends Controller
     {
         $data['form'] = $request->form;
         $data['answer'] = $request->answers;
+        $data['sub_q']=$request->sub_questions;
 
         if(empty($data['form']['required'])){
             $required=0;
         }else{
             $required=1;
+        }
+
+        if(empty($data['sub_q'])){
+            $subq="";
+        }else{
+            $subq=serialize($data['sub_q']);
         }
 
         $inputs = [
@@ -36,7 +43,8 @@ class QuestionsController extends Controller
             'required' => $required,
             'survey_id' => $data['form']['survey_id'],
             'question_type_id' => $data['form']['question_type'],
-            'parts_id'=> $data['form']['part']
+            'parts_id'=> $data['form']['part'],
+            'sub_questions'=>$subq
         ];
         $question['question'] = Questions::create($inputs);
 
@@ -52,7 +60,6 @@ class QuestionsController extends Controller
                 $answer= AnswerModel::create($ans);
                 array_push($question['answer'],$answer);
                 }
-                
             }
         }
 
