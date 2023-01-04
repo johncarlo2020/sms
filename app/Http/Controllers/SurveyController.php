@@ -32,7 +32,6 @@ class SurveyController extends Controller
     public function preview($id){
 
         
-        // $question;
         $sections=[];
         $survey = SurveyModel::where('id', $id)->get();
         $question_types = Questiontype::get();
@@ -50,8 +49,11 @@ class SurveyController extends Controller
                  $sections[$key]['part'][$key1]['questions'][$key2]['required']=$value2['required'];
                  $sections[$key]['part'][$key1]['questions'][$key2]['type']=$value2['question_type_id'];
                  $sections[$key]['part'][$key1]['questions'][$key2]['survey_id']=$value2['survey_id'];
-
-
+                 if(empty($value2['sub_questions'])){
+                 $sections[$key]['part'][$key1]['questions'][$key2]['sub_questions']="null";
+                 }else{
+                 $sections[$key]['part'][$key1]['questions'][$key2]['sub_questions']=unserialize($value2['sub_questions']);
+                 }
                  $answer=AnswerModel::where('questions_id',$value2['id'])->get();
                  foreach($answer as $key3=>$value3){
                  $sections[$key]['part'][$key1]['questions'][$key2]['answers'][$key3]=$value3['name'];
@@ -100,8 +102,11 @@ class SurveyController extends Controller
                  $sections[$key]['part'][$key1]['questions'][$key2]['required']=$value2['required'];
                  $sections[$key]['part'][$key1]['questions'][$key2]['type']=$value2['question_type_id'];
                  $sections[$key]['part'][$key1]['questions'][$key2]['survey_id']=$value2['survey_id'];
-
-
+                 if(empty($value2['sub_questions'])){
+                 $sections[$key]['part'][$key1]['questions'][$key2]['sub_questions']="null";
+                 }else{
+                 $sections[$key]['part'][$key1]['questions'][$key2]['sub_questions']=unserialize($value2['sub_questions']);
+                 }
                  $answer=AnswerModel::where('questions_id',$value2['id'])->get();
                  foreach($answer as $key3=>$value3){
                  $sections[$key]['part'][$key1]['questions'][$key2]['answers'][$key3]=$value3['name'];
@@ -110,6 +115,7 @@ class SurveyController extends Controller
                 }
             }
         }
+        // dd($sections);
 
         return view('survey', compact('survey','question_types','sections'));
     }

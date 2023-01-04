@@ -41,28 +41,44 @@
                                             {{ $value1['questions_name'] }}</h4>
                                         <p class="text-left">{{ $value1['questions_description'] }}</p>
                                     </div>
-
-                                    @if ($value1['type'] == 3)
-                                        <div class="form-check col-md-12 text-center align-mddle">
-                                            <input type="text" name="text answer" class="form-control"
-                                                placeholder="Text Answer">
-                                        </div>
-                                    @else
-                                        @foreach ($value1['answers'] as $key => $ans)
-                                            <div class="form-check col-md-12 row text-center align-middle"
-                                                style="margin:0 auto;">
-                                                <input class="btn-check" type="radio" name="exampleRadios"
-                                                    id="{{ $ans }}" value="{{ $ans }}">
-                                                <label
-                                                    class="select-preview text-left btn bgWhite text-black shadow text-capitalize"
-                                                    for="{{ $ans }}">{{ $ans }}</label>
-                                                <div class="preview-active-check-container hide">
-                                                    <i class="fas fa-check preview-active-check" aria-hidden="true"></i>
-                                                </div>
-                                                <!-- <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                        -->
+                                    @if ($value1['sub_questions'] == 'null')
+                                        @if ($value1['type'] == 3)
+                                            <div class="form-check col-md-12 text-center align-mddle">
+                                                <input type="text" name="text answer" class="form-control"
+                                                    placeholder="Text Answer">
                                             </div>
+                                        @else
+                                            @foreach ($value1['answers'] as $key => $ans)
+                                                <div class="form-check col-md-12 row text-center align-middle"
+                                                    style="margin:0 auto;">
+                                                    <input class="btn-check" type="radio" name="exampleRadios"
+                                                        id="{{ $ans }}" value="{{ $ans }}">
+                                                    <label
+                                                        class="select-preview text-left btn bgWhite text-black shadow text-capitalize"
+                                                        for="{{ $ans }}">{{ $ans }}</label>
+                                                    <!-- <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                        -->
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                    @else
+                                        @foreach ($value1['sub_questions'] as $key4 => $sub_question)
+                                            <h4 class="h3 title-new-survey text-left text-capitalize">{{ $key4 + 1 }}.
+                                                {{ $sub_question }}</h4>
+                                            @foreach ($value1['answers'] as $key => $ans)
+                                                <div class="form-check col-md-12 row text-center align-middle"
+                                                    style="margin:0 auto;">
+                                                    <input class="btn-check" type="radio" name="exampleRadios"
+                                                        id="{{ $ans }}" value="{{ $ans }}">
+                                                    <label
+                                                        class="select-preview text-left btn bgWhite text-black shadow text-capitalize"
+                                                        for="{{ $ans }}">{{ $ans }}</label>
+                                                    <!-- <div class="preview-active-check-container hide"><i class="fas fa-check preview-active-check" aria-hidden="true"></i></div>                        -->
+                                                </div>
+                                            @endforeach
                                         @endforeach
                                     @endif
+
+
                                 </div>
                             @endforeach
                         @endif
@@ -107,7 +123,7 @@
                         NRIC / My KAD No (No Kad Pengenalan) <br>
                         <p>|_|_|_|_|_|_|_|_|_|_|_|_|</p>
                         <!-- <hr class="hr_custom_table">
-                    <b>MRN</b> (if applicable) (jika berkenaan) -->
+                            <b>MRN</b> (if applicable) (jika berkenaan) -->
                     </td>
                     <td></td>
                 </tr>

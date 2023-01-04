@@ -27,8 +27,8 @@
                         <span>Edit Profile</span>
                     </a>
                     <!-- <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
-                            <span>Generate Resume</span>
-                        </a> -->
+                                                <span>Generate Resume</span>
+                                            </a> -->
                 </li>
 
                 <!-- Divider -->
@@ -36,8 +36,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                                                                                                                                                                                                                                                                                                                                                    Interface
-                                                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                                                        Interface
+                                                                                                                                                                                                                                                                                                                                                                    </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -58,8 +58,8 @@
 
                 <!-- Sidebar Toggler (Sidebar) -->
                 <!-- <div class="text-center d-none d-md-inline">
-                                                                                                                                                                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                                                                                                                                                                    </div> -->
+                                                                                                                                                                                            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                                                                                                                                                                                        </div> -->
             </ul>
             <!-- End of Sidebar -->
 
@@ -366,11 +366,11 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                                                                                                                                                                                                                                                                                                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                                                                                                                                                                                                                                                                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
-                                                                                                                                                                                                                                                                                                                                                                    <img class="img-profile rounded-circle"
-                                                                                                                                                                                                                                                                                                                                                                        src="img/undraw_profile.svg">
-                                                                                                                                                                                                                                                                                                                                                                </a> -->
+                                                                                                                                                                                                                                                                                                                                                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                                                                                                                                                                                                                                                                                                                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
+                                                                                                                                                                                                                                                                                                                                                                                        <img class="img-profile rounded-circle"
+                                                                                                                                                                                                                                                                                                                                                                                            src="img/undraw_profile.svg">
+                                                                                                                                                                                                                                                                                                                                                                                    </a> -->
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -599,6 +599,7 @@
                     var answer = 0;
 
                     const ans = [];
+                    const sub_question = [];
                     var data = $('#question_form').serializeArray().reduce(function(obj, item) {
                         obj[item.name] = item.value;
                         return obj;
@@ -606,12 +607,18 @@
                     $('.answers').each(function() {
                         ans.push($(this).val());
                     });
+
+                    $('.sub_questions').each(function() {
+                        sub_question.push($(this).val());
+                    });
+                    console.log(sub_question);
                     $.ajax({
                         url: "{{ route('add_question') }}",
                         data: {
                             "_token": "{{ csrf_token() }}",
                             "form": data,
                             "answers": ans,
+                            "sub_questions": sub_question
                         },
                         dataType: "json",
                         type: "post",
@@ -661,7 +668,7 @@
                     let sub_question = `                        
                         <div class="form-group answer-input-div">
                             <div class="col-md-12 row">
-                                <input type="text" class="answers form-control form-control-user col-md-11"
+                                <input type="text" class="form-control form-control-user col-md-11 sub_questions"
                                     placeholder="Sub Question" />
                                 <div class="col-md-1">
                                     <span class="remove-answer">
