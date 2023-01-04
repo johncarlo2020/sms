@@ -23,12 +23,12 @@
                     <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
                         <span>User</span>
                     </a>
-                    <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
+                    <a class="nav-link padding-0" href="{{ route('profile') }}" style="padding: 0px !important;">
                         <span>Edit Profile</span>
                     </a>
                     <!-- <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
-                        <span>Generate Resume</span>
-                    </a> -->
+                            <span>Generate Resume</span>
+                        </a> -->
                 </li>
 
                 <!-- Divider -->
@@ -36,8 +36,8 @@
 
                 <!-- Heading -->
                 <!-- <div class="sidebar-heading">
-                                                                                                                                                                                                                                                                                                                                                Interface
-                                                                                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                                    Interface
+                                                                                                                                                                                                                                                                                                                                                </div> -->
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -58,8 +58,8 @@
 
                 <!-- Sidebar Toggler (Sidebar) -->
                 <!-- <div class="text-center d-none d-md-inline">
-                                                                                                                                                                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                                                                                                                                                                </div> -->
+                                                                                                                                                                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                                                                                                                                                                    </div> -->
             </ul>
             <!-- End of Sidebar -->
 
@@ -345,20 +345,19 @@
                                         </div>
                                     </a>
 
-                                        <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">                                          
-                                            <div class="font-weight-bold">
-                                                <div class="text-truncate">
-                                                    {{ __('Logout') }}
-                                                </div>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">
+                                                {{ __('Logout') }}
                                             </div>
-                                        </a>
+                                        </div>
+                                    </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none">
-                                            @csrf
-                                        </form>                                    
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 </div>
                             </li>
 
@@ -367,11 +366,11 @@
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                                                                                                                                                                                                                                                                                                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                                                                                                                                                                                                                                                                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
-                                                                                                                                                                                                                                                                                                                                                                <img class="img-profile rounded-circle"
-                                                                                                                                                                                                                                                                                                                                                                    src="img/undraw_profile.svg">
-                                                                                                                                                                                                                                                                                                                                                            </a> -->
+                                                                                                                                                                                                                                                                                                                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                                                                                                                                                                                                                                                                                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Myco Claro</span>
+                                                                                                                                                                                                                                                                                                                                                                    <img class="img-profile rounded-circle"
+                                                                                                                                                                                                                                                                                                                                                                        src="img/undraw_profile.svg">
+                                                                                                                                                                                                                                                                                                                                                                </a> -->
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -574,7 +573,8 @@
                         success: function(data) {
                             var $model = $('.sections_select');
                             $model.empty().append(function() {
-                                var output = '<option disabled selected>Select Section</option>';
+                                var output =
+                                    '<option disabled selected>Select Section</option>';
                                 $.each(data, function(key, value) {
                                     output += '<option value="' + value['id'] +
                                         '">' + value[
@@ -674,7 +674,7 @@
 
                     $(".sub-question-container").append(sub_question);
                 });
-                
+
 
                 // Remove Answer
                 $(document).on('click', '.remove-answer', function() {
@@ -716,21 +716,21 @@
                     window.location.replace("/template");
                 });
 
-                $(document).on('click', '.preview-survey-submit', function(){
+                $(document).on('click', '.preview-survey-submit', function() {
                     alert('save alert');
                 });
 
                 $('.formats_select').change(function() {
-                    var selected = $(this).val();                    
+                    var selected = $(this).val();
 
-                    if(selected == 'column'){                        
+                    if (selected == 'column') {
                         $('.btn-add-sub-question').removeClass('hide');
                     } else {
-                        $('.btn-add-sub-question').addClass('hide');     
-                        $('.sub-question-container').removeClass('hide');                   
+                        $('.btn-add-sub-question').addClass('hide');
+                        $('.sub-question-container').removeClass('hide');
                     }
                 });
-                
+
             });
         </script>
         <!-- Scripts -->
