@@ -725,9 +725,10 @@
 
                     if (selected == 'column') {
                         $('.btn-add-sub-question').removeClass('hide');
+                        $('.sub-question-container').addClass('removeSubQuestion');
                     } else {
                         $('.btn-add-sub-question').addClass('hide');
-                        $('.sub-question-container').removeClass('hide');
+                        $('.removeSubQuestion').addClass('hide');
                     }
                 });
 
