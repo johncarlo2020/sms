@@ -293,6 +293,11 @@
                             </div> -->
                         </div>
 
+                        <div class="sub-question-container hide">
+                            <span class="modal-survey-name">SUB QUESTION</span>
+                            <!-- append here -->
+                        </div>
+
                         </div>
 
                         <div class="form-group">
@@ -301,10 +306,10 @@
                                 ADD ANSWER
                             </button>
 
-                            <!-- <button type="button" class="btn btn-secondary bgWhite txt-black btn-add-other-answer hide">
+                            <button type="button" class="btn btn-secondary bgWhite txt-black btn-add-sub-question hide">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                ADD "OTHER" ANSWER
-                            </button> -->
+                                ADD SUB QUESTION
+                            </button>
 
                         </div>
 
@@ -313,15 +318,23 @@
                             <div class="btn-group" style="background: #eee; padding: 15px 20px 15px 7px;">
                                 <div class="dropdown col-md-8">
                                     <span>Display format:</span>
-                                    <button class="btn dropdown-toggle add-question-dropdown" type="button"
+                                    <!-- <button class="btn dropdown-toggle add-question-dropdown" type="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fa fa-bars" aria-hidden="true"></i>
-                                        In a row
+                                        Select Format
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><button class="dropdown-item" type="button">Item 1</button></li>
-                                        <li><button class="dropdown-item" type="button">Item 2</button></li>
-                                    </ul>
+                                        <li><button class="dropdown-item" type="button">In a Row</button></li>
+                                        <li><button class="dropdown-item" type="button">In a Column</button></li>
+                                    </ul> -->
+
+                                    <div class="form-group" style="width: 70%; float: right;">
+                                        <select name="section" class="form-select formats_select" id="formats_select">
+                                            <option value="">-Select Format-</option>
+                                            <option value="row" id="format_row">In a Row</option>
+                                            <option value="column" id="format_column">In a Column</option>
+                                        </select>
+                                    </div>
 
                                 </div>
 

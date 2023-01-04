@@ -638,7 +638,7 @@
                 // Add input answer
                 $(document).on('click', '.btn-add-answer', function() {
 
-                    let answer = `
+                    let answer = `                        
                         <div class="form-group answer-input-div">
                             <div class="col-md-12 row">
                                 <input type="text" class="answers form-control form-control-user col-md-11"
@@ -654,6 +654,27 @@
 
                     $(".answer-container").append(answer);
                 });
+
+                // Add Sub Question
+                $(document).on('click', '.btn-add-sub-question', function() {
+
+                    let sub_question = `                        
+                        <div class="form-group answer-input-div">
+                            <div class="col-md-12 row">
+                                <input type="text" class="answers form-control form-control-user col-md-11"
+                                    placeholder="Sub Question" />
+                                <div class="col-md-1">
+                                    <span class="remove-answer">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        `
+
+                    $(".sub-question-container").append(sub_question);
+                });
+                
 
                 // Remove Answer
                 $(document).on('click', '.remove-answer', function() {
@@ -698,6 +719,22 @@
                 $(document).on('click', '.preview-survey-submit', function(){
                     alert('save alert');
                 });
+
+                $('.formats_select').change(function() {
+                    var selected = $(this).val();
+
+                    console.log(selected);
+
+                    if(selected == 'row'){
+                        console.log('true row');
+                        $('.btn-add-sub-question').removeClass('hide');
+                        $('.sub-question-container').removeClass('hide');
+                    } else {
+                        // $('.btn-add-sub-question').addClass('hide');
+                        // $('.sub-question-container').addClass('hide');
+                    }
+                });
+                
             });
         </script>
         <!-- Scripts -->
