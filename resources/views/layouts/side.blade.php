@@ -727,8 +727,8 @@
                         $('.btn-add-sub-question').removeClass('hide');
                         $('.sub-question-container').removeClass('hide');
                     } else {
-                        // $('.btn-add-sub-question').addClass('hide');
-                        // $('.sub-question-container').addClass('hide');
+                        $('.btn-add-sub-question').addClass('hide');
+                        $('.sub-question-container').addClass('hide');
                     }
                 });
                 
