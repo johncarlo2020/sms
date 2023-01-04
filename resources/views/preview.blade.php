@@ -62,7 +62,7 @@
                                         @endif
                                     @else
                                         @foreach ($value1['sub_questions'] as $key4 => $sub_question)
-                                            <h4 class="h3 title-new-survey text-left text-capitalize">{{ $key4 + 1 }}.
+                                            <h4 class="h3 title-new-survey title-sub-question text-left text-capitalize">{{ $key4 + 1 }}.
                                                 {{ $sub_question }}</h4>
                                             @foreach ($value1['answers'] as $key => $ans)
                                                 <div class="form-check col-md-12 row text-center align-middle"
