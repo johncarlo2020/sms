@@ -26,9 +26,9 @@
                     <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
                         <span>Edit Profile</span>
                     </a>
-                    <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
+                    <!-- <a class="nav-link padding-0" href="javascript:void(0);" style="padding: 0px !important;">
                         <span>Generate Resume</span>
-                    </a>
+                    </a> -->
                 </li>
 
                 <!-- Divider -->
@@ -657,7 +657,7 @@
 
                 // Add Sub Question
                 $(document).on('click', '.btn-add-sub-question', function() {
-
+                    $('.sub-question-container').removeClass('hide');
                     let sub_question = `                        
                         <div class="form-group answer-input-div">
                             <div class="col-md-12 row">
@@ -725,10 +725,9 @@
 
                     if(selected == 'column'){                        
                         $('.btn-add-sub-question').removeClass('hide');
-                        $('.sub-question-container').removeClass('hide');
                     } else {
-                        $('.btn-add-sub-question').addClass('hide');
-                        $('.sub-question-container').addClass('hide');
+                        $('.btn-add-sub-question').addClass('hide');     
+                        $('.sub-question-container').removeClass('hide');                   
                     }
                 });
                 
