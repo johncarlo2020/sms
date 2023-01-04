@@ -83,7 +83,7 @@ a{
 }
 
 .hide{
-    display: none;
+    display: none !important;
 }
 
 .modal-lg{
@@ -354,7 +354,7 @@ a{
 
 /* Add Question */
 .btn-add-answer,
-.btn-add-other-answer{
+.btn-add-sub-question{
     color: #2e6ddf !important;
     font-weight: 700 !important;
     font-family: system-ui;
