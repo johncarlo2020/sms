@@ -2,6 +2,9 @@ html, body {
     height: 100%;
 }
 
+.select-icons {
+    font-family: 'FontAwesome', 'sans-serif', 'Arial' !important;
+}
 
 .h-100 { 
     min-height: 100%;
@@ -90,7 +93,6 @@ a{
     width: 700px !important;
 }
 
-
 /* side menu */
 .sidebar-dark .nav-item .nav-link, .sidebar-dark .nav-item .nav-link{
     padding: 9px !important;
@@ -99,7 +101,11 @@ a{
 .navToggle{
     cursor: pointer;    
     position: relative;
-    top: 16px;
+    top: 22px;
+}
+
+.sidebar-menu-container{
+    position: absolute;
 }
 
 .collapse-item:hover{
@@ -519,11 +525,23 @@ a{
 .preview-btn{
     background: #fff;    
     margin: 0;
-    right: 80px;
+    right: 0;
     position: absolute;
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 6px;
+    top: 0;
+}
+
+.theme-btn{
+    background: #fff;    
+    margin: 0;
+    right: 60px ;
+    position: absolute;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    top: 0;
 }
 
 .preview-active-check-container{
@@ -765,3 +783,22 @@ a{
     border-radius: 5px;
     bottom: -113px;
   }
+
+  .delete-container,
+  .copy-container{
+    cursor: pointer;
+  }
+
+  .copy-container{
+    margin-right: 15px;
+  }
+
+  .form-check-input-question{
+    position: relative !important;
+    left: 12px;
+  }
+  
+  .editable-title{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+   }

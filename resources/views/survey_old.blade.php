@@ -1,11 +1,8 @@
 @extends('layouts.side')
-<style>
 
-</style>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
 @section('survey')
-    <div class="row hide" style="padding-top: 40px;">
-        <!-- <div class="col-md-4 text-right" style="">
+    <div class="row" style="padding-top: 40px;">
+        <div class="col-md-4 text-right" style="">
 
             <div class="custom-file">
                 <span>
@@ -16,23 +13,23 @@
                 </span>
                 <input type="file" class="custom-file-input" id="customFile">
             </div>
-        </div> -->
-        <div class="col-md-8 padding-0 margin-0-auto">
-            <div class="col-md-12 bgPrimary">
-                <h1 class="h3 mb-4 title-new-survey">
-                    {{ $survey[0]->name }}
-                </h1>
+        </div>
+        <div class="col-md-6">
+            <h1 class="h3 mb-4 title-new-survey">
+                {{ $survey[0]->name }}
+            </h1>
+        </div>
 
-                <p class="preview-btn shadow">
-                    <i class="fas fa-eye"></i>
-                </p>
-            </div>
+        <div class="col-md-2">
+            <p class="preview-btn shadow">
+                <i class="fas fa-eye"></i>
+            </p>
         </div>
     </div>
 
-    <!-- <hr style="margin-top: 20px; border: 1px solid;"> -->
+    <hr style="margin-top: 20px; border: 1px solid;">
 
-    <div class="row hide" style="padding-top: 40px; display:">
+    <div class="row" style="padding-top: 40px;">
         <div class="add-question-container">
             <div class="col-md-12 text-center">
                 <span>
@@ -61,8 +58,8 @@
     </div>
     </div>
 
-    <!-- sections -->
-    <!-- <div class="col-md-8 padding-0 margin-0-auto section-part-container" style="margin-top: 35px;">
+    <div class="col-md-8 padding-0 margin-0-auto section-part-container" style="margin-top: 35px;">
+        <!-- sections -->
         <div class="col-md-11 row">
             <div class="col-md-4 section-main-container">
                 <div class="card shadow h-100 section-container">
@@ -87,110 +84,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </div> -->
-
-    <div class="w-75 margin-0-auto" style="margin-top: 50px;">
-        <div class="col-md-12">
-            <h1 class="h3 mb-4 title-new-survey">
-                <!-- {{ $survey[0]->name }} -->
-                &nbsp;
-            </h1>
-
-            <p class="preview-btn shadow">
-                <i class="fas fa-eye"></i>
-            </p>
-
-            <p class="theme-btn shadow">
-                <i class="fa fa-solid fa-palette"></i>
-            </p>
-
-        </div>
-    </div>
-
-    <div class="card w-75 margin-0-auto" style="margin-top: 50px;">
-        <span class="border" style="border: 3px solid !important; border-color: #4e73df !important;"></span>
-        <div class="card-body border-primary">
-            <h2 class="card-title editable-title" contentEditable="true">Survey Title</h2>
-            <p class="card-text" contentEditable="true">Description</p>
-            <!-- <a href="#" class="btn btn-primary">Button</a> -->
-        </div>
-    </div>
-
-
-    <div class="card w-75 margin-0-auto" style="margin-top: 20px;">
-        <div class="card-body">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h4 class="card-title editable-title" contentEditable="true">Untitled Question</h4>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <!-- <label for="custom1" class="control-label">Custom Selectbox</label> -->
-                            <select class="custom-select select-icons">
-                                <option value="2">&#xf036; Short answer</option>
-                                <option value="2">&#xf039; Paragraph</option>                                
-                                <option value="3">&#xf10c; Multiple Choice</option>
-                                <option value="4" selected>&#xf00c; Checkboxes</option>
-                                <option value="5">&#xf078; Dropdown</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-text">
-                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Checkbox for following text input" />
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with radio" value="Option 1" dir="ltr" data-initial-value="Option 1"/>
-                    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                        <i class="fa fa-solid fa-trash"></i>
-                    </button>
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-text">
-                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Radio button for following text input" />
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with radio button" value="Option 2" dir="ltr" data-initial-value="Option 2" />
-                    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                        <i class="fa fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                
-                <div class="input-group mb-3">
-                    <div class="input-group-text">
-                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Radio button for following text input" />
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with radio button" value="Option 3" dir="ltr" data-initial-value="Option 3" />
-                    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                        <i class="fa fa-solid fa-trash"></i>
-                    </button>
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-text">
-                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Radio button for following text input" />
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with radio button" value="Option 4" dir="ltr" data-initial-value="Option 4" />
-                    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                        <i class="fa fa-solid fa-trash"></i>
-                    </button>
-                </div>
-
-        </div>
-        <div class="card-footer">          
-            <div class="form-check form-switch float-left" style="margin-left: 10px;">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Required</label> 
-            </div>
-            <div class="delete-container float-right" style="margin-top: 1px;">
-                <i class="fa fa-solid fa-trash"></i>                 
-            </div> 
-
-            <div class="copy-container float-right" style="margin-top: 1px;">
-                <i class="fa fa-solid fa-copy"></i>               
-            </div> 
 
         </div>
     </div>
@@ -280,11 +173,11 @@
         @if (empty($value['part']))
         @else
             @foreach ($value['part'] as $key2 => $value2)
-                <div class="survey-created padding-0 col-md-8 hide" style="margin-top: 50px;">
-                    <!-- <div class="section_title_container">
+                <div class="survey-created padding-0 col-md-8" style="margin-top: 50px;">
+                    <div class="section_title_container">
                         <p class="section_title_h1">{{ $value['name'] }}: {{ $value2['name'] }}</p>
                         <p class="section_description">{{ $value['name'] }}: {{ $value2['name'] }}</p>
-                    </div> -->
+                    </div>
                     @if (empty($value2['questions']))
                     @else
                         @foreach ($value2['questions'] as $key => $value1)
@@ -350,11 +243,11 @@
             @endforeach
         @endif
     @endforeach
-    <!-- <hr style="margin-top: 20px; border: 1px solid;"> -->
+    <hr style="margin-top: 20px; border: 1px solid;">
 
 
     <!-- Hide this if Empty Question -->
-    <div class="col-md-12 text-right preview-survey-created-container hide" style="margin-bottom: 130px;">
+    <div class="col-md-12 text-right preview-survey-created-container" style="margin-bottom: 130px;">
         <div class="col-md-10">
             <button type="button" class="btn bgPrimary2 preview-survey-created">Create</button>
         </div>
