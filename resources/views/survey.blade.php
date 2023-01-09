@@ -117,6 +117,10 @@
         </div>
     </div>
 
+    <div class="survey-title-container">
+        <!-- Append Here -->
+    </div>
+
 
     <div class="card w-75 margin-0-auto" style="margin-top: 20px;">
         <div class="card-body">
@@ -130,8 +134,8 @@
                             <select class="custom-select select-icons">
                                 <option value="2">&#xf036; Short answer</option>
                                 <option value="2">&#xf039; Paragraph</option>                                
-                                <option value="3">&#xf10c; Multiple Choice</option>
-                                <option value="4" selected>&#xf00c; Checkboxes</option>
+                                <option value="3" selected>&#xf10c; Multiple Choice</option>
+                                <option value="4">&#xf00c; Checkboxes</option>
                                 <option value="5">&#xf078; Dropdown</option>
                             </select>
                         </div>
@@ -180,7 +184,7 @@
 
         </div>
         <div class="card-footer">          
-            <div class="form-check form-switch float-left" style="margin-left: 10px;">
+            <div class="form-check form-switch float-left" style="margin-left: 10px; margin-left: 20px;">
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                 <label class="form-check-label" for="flexSwitchCheckDefault">Required</label> 
             </div>
@@ -191,8 +195,32 @@
             <div class="copy-container float-right" style="margin-top: 1px;">
                 <i class="fa fa-solid fa-copy"></i>               
             </div> 
-
         </div>
+
+        <!-- Initial Add functions -->
+        <div class="card-footer add-functions-div">
+            <div class="copy-container float-left" style="margin-top: 1px;">
+                <button onClick="addQuestion()" class="btn btn-outline-primary btn-primary text-white" type="button" data-mdb-ripple-color="dark">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> 
+                    Add Question
+                </button>
+            </div> 
+
+            <div class="copy-container float-left" style="margin-top: 1px;">
+                <button class="btn btn-outline-primary btn-primary text-white" type="button" data-mdb-ripple-color="dark">
+                    <i class="fa fa-text-width" aria-hidden="true"></i>
+                    Add Title and Description
+                </button>   
+            </div> 
+
+            <div class="copy-container float-left" style="margin-top: 1px;">
+                <button class="btn btn-outline-primary btn-primary text-white" type="button" data-mdb-ripple-color="dark">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                    Add Image
+                </button>   
+            </div> 
+        </div>
+
     </div>
 
 

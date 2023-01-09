@@ -716,6 +716,159 @@
                 });
 
             });
+
+        // Survey Functions
+        function addOption() {
+            let option = `
+                <div class="input-group mb-3" id="add-option">
+                    <div class="input-group-text">
+                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Checkbox for following text input" />
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with radio" value="Option New" dir="ltr" data-initial-value="Option 1"/>
+                    <button onClick="deleteOption();" class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                        <i class="fa fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `
+            $('.input-option-container').append(option);
+        }
+
+        function addOther() {
+            let other = `
+                <div class="input-group mb-3" id="add-other">
+                    <div class="input-group-text">
+                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Checkbox for following text input" />
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with radio" value="Option Other" dir="ltr" data-initial-value="Option 1"/>
+                    <button onClick="deleteOther();" class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                        <i class="fa fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `
+            $('.input-option-container').append(other);
+        }
+
+        function deleteOption() {            
+            $('#add-option').remove();
+        }
+
+        function deleteOther() {            
+            $('#add-other').remove();
+        }
+
+        function addQuestionFunctions(){
+            
+            // remove old add function menu
+            $('.add-functions-div').remove();
+
+            // remove all old append function
+            $('.append-functions-div').remove();
+
+            let question_functions = `
+                    <div class="card-footer add-functions-div">
+                        <div class="copy-container float-left" style="margin-top: 1px;">
+                            <button onClick="addQuestion()" class="btn btn-outline-primary btn-primary text-white" type="button" data-mdb-ripple-color="dark">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i> 
+                                Add Question
+                            </button>
+                        </div> 
+
+                        <div class="copy-container float-left" style="margin-top: 1px;">
+                            <button class="btn btn-outline-primary btn-primary text-white" type="button" data-mdb-ripple-color="dark">
+                                <i class="fa fa-text-width" aria-hidden="true"></i>
+                                Add Title and Description
+                            </button>   
+                        </div> 
+
+                        <div class="copy-container float-left" style="margin-top: 1px;">
+                            <button class="btn btn-outline-primary btn-primary text-white" type="button" data-mdb-ripple-color="dark">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                Add Image
+                            </button>   
+                        </div> 
+                    </div>
+            `
+            setTimeout(() => { 
+                $('.append-functions-div').append(question_functions);
+            }, 100);
+           
+        }
+
+        function addQuestion(){    
+            addQuestionFunctions();   
+            // deleteOption();     
+            let add_question = `   
+                    <div class="card w-75 margin-0-auto" style="margin-top: 20px;">                     
+                        <div class="card-body question-sub-container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4 class="card-title editable-title" contentEditable="true">Untitled Question</h4>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <!-- <label for="custom1" class="control-label">Custom Selectbox</label> -->
+                                        <select class="custom-select select-icons">
+                                            <option value="2">&#xf036; Short answer</option>
+                                            <option value="2">&#xf039; Paragraph</option>                                
+                                            <option value="3">&#xf10c; Multiple Choice</option>
+                                            <option value="4" selected>&#xf00c; Checkboxes</option>
+                                            <option value="5">&#xf078; Dropdown</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-text">
+                                <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Checkbox for following text input" />
+                            </div>
+                            <input type="text" class="form-control" aria-label="Text input with radio" value="Option 1" dir="ltr" data-initial-value="Option 1"/>
+                            <button onClick="deleteOption();" class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                                <i class="fa fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="input-option-container"></div>
+                        <div class="input-group mb-3">                       
+                            
+                            <a href="javascript:void(0);" onClick="addOption();" class="btn-option">
+                                <i class="fa fa-solid fa-plus"></i> Add Option
+                            </a>
+
+                            <a href="javascript:void(0);" onClick="addOther();" class="btn-option">
+                                <i class="fa fa-solid fa-plus"></i> Add Other
+                            </a>
+
+                        </div>
+
+                        </div>
+                 
+            
+                    <div class="card-footer">          
+                        <div class="form-check form-switch float-left" style="margin-left: 10px; margin-left: 20px;">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Required</label> 
+                        </div>
+                        <div class="delete-container float-right" style="margin-top: 1px;">
+                            <i class="fa fa-solid fa-trash"></i>                 
+                        </div> 
+
+                        <div class="copy-container float-right" style="margin-top: 1px;">
+                            <i class="fa fa-solid fa-copy"></i>               
+                        </div> 
+                    </div>
+
+                    <div class="append-functions-div" style="padding-bottom: 10px;">
+                            <!-- Append Function here -->
+                    </div>                    
+                    `                                    
+            $('.survey-title-container').prepend(add_question);
+            
+        }
+
+
+        // end Survey functions
+        
         </script>
         <!-- Scripts -->
         <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
