@@ -121,9 +121,8 @@
         <!-- Append Here -->
     </div>
 
-
     <div class="card w-75 margin-0-auto" style="margin-top: 20px;">
-        <div class="card-body">
+        <div class="card-body main-body-question">
                 <div class="row">
                     <div class="col-md-8">
                         <h4 class="card-title editable-title" contentEditable="true">Untitled Question</h4>
@@ -142,45 +141,56 @@
                     </div>
                 </div>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-text">
-                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Checkbox for following text input" />
+                <ol class="dropdown-type">
+
+                </ol>
+
+                <li class="dropdown_li" id="add-option">
+                    <div class="input-group mb-3 input-group-select">
+                        <div class="input-group-text">
+                            <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Checkbox for following text input" />
+                        </div>
+                        <input type="text" class="form-control" aria-label="Text input with radio" value="Option 1" dir="ltr" data-initial-value="Option 1"/>
+                        <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                            <i class="fa fa-solid fa-trash"></i>
+                        </button>
                     </div>
-                    <input type="text" class="form-control" aria-label="Text input with radio" value="Option 1" dir="ltr" data-initial-value="Option 1"/>
-                    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                        <i class="fa fa-solid fa-trash"></i>
-                    </button>
+                </li>
+
+                <li class="dropdown_li" id="add-option">
+                    <div class="input-group mb-3 input-group-select">
+                        <div class="input-group-text">
+                            <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Radio button for following text input" />
+                        </div>
+                        <input type="text" class="form-control" aria-label="Text input with radio button" value="Option 2" dir="ltr" data-initial-value="Option 2" />
+                        <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                            <i class="fa fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </li>
+
+                <li class="dropdown_li" id="add-option">
+                    <div class="input-group mb-3 input-group-select">
+                        <div class="input-group-text">
+                            <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Radio button for following text input" />
+                        </div>
+                        <input type="text" class="form-control" aria-label="Text input with radio button" value="Option 3" dir="ltr" data-initial-value="Option 3" />
+                        <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                            <i class="fa fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </li>
+
+                <div class="input-option-container"></div>
+                <div class="input-group mb-3">                                                  
+                    <a href="javascript:void(0);" class="btn-option" id="add-option-id">
+                        <i class="fa fa-solid fa-plus"></i> Add Option
+                    </a>
+                    <a href="javascript:void(0);" onClick="addOther();" class="btn-option">
+                        <i class="fa fa-solid fa-plus"></i> Add Other
+                    </a>
                 </div>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-text">
-                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Radio button for following text input" />
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with radio button" value="Option 2" dir="ltr" data-initial-value="Option 2" />
-                    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                        <i class="fa fa-solid fa-trash"></i>
-                    </button>
-                </div>
-                
-                <div class="input-group mb-3">
-                    <div class="input-group-text">
-                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Radio button for following text input" />
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with radio button" value="Option 3" dir="ltr" data-initial-value="Option 3" />
-                    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                        <i class="fa fa-solid fa-trash"></i>
-                    </button>
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-text">
-                        <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Radio button for following text input" />
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with radio button" value="Option 4" dir="ltr" data-initial-value="Option 4" />
-                    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                        <i class="fa fa-solid fa-trash"></i>
-                    </button>
-                </div>
 
         </div>
         <div class="card-footer">          

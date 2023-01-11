@@ -717,10 +717,12 @@
 
             });
 
+
         // Survey Functions
-        function addOption() {
+        function addOptionMultipleChoice() {
             let option = `
-                <div class="input-group mb-3" id="add-option">
+            <li class="dropdown_li" id="add-option">
+                <div class="input-group mb-3 input-group-select">
                     <div class="input-group-text">
                         <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Checkbox for following text input" />
                     </div>
@@ -729,13 +731,52 @@
                         <i class="fa fa-solid fa-trash"></i>
                     </button>
                 </div>
+            </li>
             `
+            
             $('.input-option-container').append(option);
+        }
+
+        function addOptionCheck() {
+            let option = `
+            <li class="dropdown_li" id="add-option">
+                <div class="input-group mb-3 input-group-select">
+                    <div class="input-group-text">
+                        <input class="form-check-input form-check-input-question" type="checkbox" value="" aria-label="Checkbox for following text input" />
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with radio" value="Option New" dir="ltr" data-initial-value="Option 1"/>
+                    <button onClick="deleteOption();" class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                        <i class="fa fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </li>
+            `
+            
+            $('.input-option-container').append(option);
+        }
+
+        function addOptionDropdown() {
+            let option = `
+            <li class="dropdown_li" id="add-option" style="list-style-type: unset;">
+                <div class="input-group mb-3 input-group-select">
+                    <div class="input-group-text hide">
+                        <input class="form-check-input form-check-input-question" type="checkbox" value="" aria-label="Checkbox for following text input" />
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with radio" value="Option New" dir="ltr" data-initial-value="Option 1"/>
+                    <button onClick="deleteOption();" class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+                        <i class="fa fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </li>
+            `
+            
+            $('.dropdown-type').append(option);
         }
 
         function addOther() {
             let other = `
-                <div class="input-group mb-3" id="add-other">
+            <li class="dropdown_li" id="add-option">
+                <div class="input-group mb-3">
                     <div class="input-group-text">
                         <input class="form-check-input form-check-input-question" type="radio" value="" aria-label="Checkbox for following text input" />
                     </div>
@@ -744,6 +785,7 @@
                         <i class="fa fa-solid fa-trash"></i>
                     </button>
                 </div>
+            </li>
             `
             $('.input-option-container').append(other);
         }
@@ -795,8 +837,7 @@
         }
 
         function addQuestion(){    
-            addQuestionFunctions();   
-            // deleteOption();     
+            addQuestionFunctions();    
             let add_question = `   
                     <div class="card w-75 margin-0-auto" style="margin-top: 20px;">                     
                         <div class="card-body question-sub-container">
@@ -831,11 +872,11 @@
                         <div class="input-option-container"></div>
                         <div class="input-group mb-3">                       
                             
-                            <a href="javascript:void(0);" onClick="addOption();" class="btn-option">
+                            <a href="javascript:void(0);" id="add-option-id" class="btn-option">
                                 <i class="fa fa-solid fa-plus"></i> Add Option
                             </a>
 
-                            <a href="javascript:void(0);" onClick="addOther();" class="btn-option">
+                            <a href="javascript:void(0);" onClick="addOther();" id="add-other-id" class="btn-option">
                                 <i class="fa fa-solid fa-plus"></i> Add Other
                             </a>
 
@@ -865,7 +906,81 @@
             $('.survey-title-container').prepend(add_question);
             
         }
+        
+        function checkBox(){
+            $('.form-check-input-question').attr('type', 'checkbox');
+        }
 
+        function multipleChoice(){
+            $('.form-check-input-question').attr('type', 'radio');
+        }
+
+        function dropDownChoice(){
+            $('.input-group-text').addClass('hide');
+            
+            $('.dropdown_li').css({
+                'list-style-type': 'unset'
+            });
+
+            $('.dropdown-type').css({'padding-left': '20px'});
+
+            var cells = $('.dropdown-type');
+
+            $('.dropdown_li').each(function (i) {
+                cells.append($(this));           
+            });
+        }
+
+        function backInputGroup(){
+            $('.input-group-text').removeClass('hide');
+            $('.dropdown_li').css({
+                'list-style-type': 'none'
+            });
+
+            $('.dropdown-type').css({'padding-left': '0px'});
+        }
+
+        $(document).on('change', '.select-icons', function() {
+            var id = $(this).val(); 
+
+            console.log(id);
+
+            if(id == 4){
+                // Checkbox
+
+                // Trigger Once only
+                $(document).on('click', '#add-option-id', function(){
+                    addOptionCheck();                 
+                });
+
+                checkBox();   
+                backInputGroup();   
+                
+                  
+            } else if(id == 3) {
+                // Multiple Choice
+
+                // Trigger Once only
+                $(document).on('click', '#add-option-id', function(){
+                    addOptionMultipleChoice();                  
+                });
+                
+                multipleChoice();
+                backInputGroup();
+           
+                
+            } else if (id == 5) {
+                // DropDown
+                
+                // Trigger Once only
+                $(document).on('click', '#add-option-id', function(){
+                    addOptionDropdown();                   
+                });
+
+                dropDownChoice();            
+            } 
+
+        });
 
         // end Survey functions
         

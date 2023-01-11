@@ -806,3 +806,11 @@ a{
    .btn-option{
     padding: 5px;
    }
+
+   .dropdown_li{
+    list-style-type: none;
+   }
+
+   .dropdown-type{
+    padding-left: 0px;
+   }
